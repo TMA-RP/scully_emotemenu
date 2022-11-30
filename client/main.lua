@@ -550,7 +550,7 @@ function EmoteMenu.Search(query)
     end
     lib.registerMenu({
         id = 'animations_search_menu',
-        title = 'Animation Menu',
+        title = 'Animations',
         position = Config.MenuPosition,
         options = options,
         onClose = function(_)
@@ -605,7 +605,7 @@ end
 function EmoteMenu.OpenBindMenu()
     lib.registerMenu({
         id = 'animations_emote_binds_menu',
-        title = 'Animation Menu',
+        title = 'Animations',
         position = Config.MenuPosition,
         options = emoteMenuBindsOptions,
         onClose = function(_)
@@ -720,7 +720,7 @@ end
 --- Main Menu
 lib.registerMenu({
     id = 'animations_main_menu',
-    title = 'Animation Menu',
+    title = 'Animations',
     position = Config.MenuPosition,
     options = mainMenuOptions,
 }, function(selected, scrollIndex, option)
@@ -765,7 +765,7 @@ end)
 --- Emote Menu
 lib.registerMenu({
     id = 'animations_emote_menu',
-    title = 'Animation Menu',
+    title = 'Animations',
     position = Config.MenuPosition,
     options = emoteMenuOptions,
     onClose = function(_)
