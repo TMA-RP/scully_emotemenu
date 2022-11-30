@@ -22,7 +22,7 @@ Config = {
     -- Set this to '' to disable the key.
     MenuKeybind = 'f5', -- List of keys here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- You can change the menu position here.
-    MenuPosition = 'top-right', -- (top-left, top-right, bottom-left, bottom-right)
+    MenuPosition = 'top-left', -- (top-left, top-right, bottom-left, bottom-right)
     -- You can change the notification position here
     NotificationPosition = 'top', -- (top, bottom, top-left, top-right, bottom-left, bottom-right)
     -- You can change the help alert position here
@@ -34,15 +34,15 @@ Config = {
     -- You can enable automated ptfx on emotes with the Auto flag here. 
     EnableAutoPtfx = false,
     -- You can enable the NSFW emotes here.
-    EnableNSFWEmotes = false,
+    EnableNSFWEmotes = true,
     -- You can enable the gang emotes here.
-    EnableGangEmotes = false,
+    EnableGangEmotes = true,
     -- You can enable the social movement emotes here.
     EnableSocialMovementEmotes = false,
     -- You can enable the consumable emotes here.
     EnableConsumableEmotes = false,
     -- You can enable the synchronized emotes here.
-    EnableSynchronizedEmotes = false,
+    EnableSynchronizedEmotes = true,
     -- You can enable the animal emotes here.
     EnableAnimalEmotes = false
 }
