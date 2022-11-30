@@ -19,28 +19,28 @@ EmoteMenu = {
 -- Menu Options
 local mainMenuOptions, emoteMenuOptions, emoteMenuBindsOptions = {
     -- Main Menu
-    {label = 'Search', description = 'Search for animations', icon = 'fa-solid fa-magnifying-glass', args = 'animations_search'},
-    {label = 'Keybinds', description = 'Create and delete emote binds', icon = 'fa-solid fa-keyboard', args = 'animations_emote_binds_menu'},
-    {label = 'Emote Menu', description = 'Open the emote menu', icon = 'fa-solid fa-person', args = 'animations_emote_menu'},
-    {label = 'Walking Styles', icon = 'fa-solid fa-person-walking', values = {}, args = 'Walks', close = false},
-    {label = 'Scenarios', icon = 'fa-solid fa-person-walking-with-cane', values = {}, args = 'Scenarios', close = false},
-    {label = 'Facial Expressions', icon = 'fa-solid fa-face-angry', values = {}, args = 'Expressions', close = false},
-    {label = 'Cancel', values = {{label = 'Emote', description = 'Cancel your emote'}, {label = 'Walk Style', description = 'Reset your walk style'}, {label = 'Expression', description = 'Reset your expression'}, {label = 'All', description = 'Cancel and reset everything'}}, icon = 'fa-solid fa-ban', args = 'cancel', close = false}
+    {label = 'Rechercher', description = 'Rechercher une animation', icon = 'fa-solid fa-magnifying-glass', args = 'animations_search'},
+    {label = 'Animations', description = 'Ouvrir le menu animation', icon = 'fa-solid fa-person', args = 'animations_emote_menu'},
+    {label = 'Styles de marche', icon = 'fa-solid fa-person-walking', values = {}, args = 'Walks', close = false},
+--     {label = 'Scenarios', icon = 'fa-solid fa-person-walking-with-cane', values = {}, args = 'Scenarios', close = false},
+    {label = 'Expressions faciales', icon = 'fa-solid fa-face-angry', values = {}, args = 'Expressions', close = false},
+    {label = 'Arrêter', values = {{label = 'Animation', description = "Stopper l'animation en cours"}, {label = 'Style de marche', description = 'Retrouver le style de marche par défaut'}, {label = 'Expression', description = "Stopper l'expression faciale"}, {label = 'Tout', description = 'Tout arrêter et remettre par défaut'}}, icon = 'fa-solid fa-ban', args = 'cancel', close = false},
+    {label = 'Raccourcis', description = 'Créer et supprime des raccourcis', icon = 'fa-solid fa-keyboard', args = 'animations_emote_binds_menu'},
 }, {
     -- Emote Menu
-    {label = 'Emotes', icon = 'fa-solid fa-person-walking', values = {}, args = 'Emotes', close = false},
-    {label = 'Prop Emotes', icon = 'fa-solid fa-person-hiking', values = {}, args = 'PropEmotes', close = false},
+    {label = 'Animations', icon = 'fa-solid fa-person-walking', values = {}, args = 'Emotes', close = false},
+    {label = 'Animations avec objets', icon = 'fa-solid fa-person-hiking', values = {}, args = 'PropEmotes', close = false},
+    {label = 'Animations partagées', icon = 'fa-solid fa-people-carry', values = {}, args = 'SynchronizedEmotes', close = false},
+    {label = 'Danses', icon = 'fa-solid fa-person-running', values = {}, args = 'DanceEmotes', close = false},
     {label = 'Consumable Emotes', icon = 'fa-solid fa-pizza-slice', values = {}, args = 'ConsumableEmotes', close = false},
-    {label = 'Dance Emotes', icon = 'fa-solid fa-person-running', values = {}, args = 'DanceEmotes', close = false},
-    {label = 'Synchronized Emotes', icon = 'fa-solid fa-people-carry', values = {}, args = 'SynchronizedEmotes', close = false},
     {label = 'Animal Emotes', icon = 'fa-solid fa-dog', values = {}, args = 'AnimalEmotes', close = false}
 }, {
     -- Emote Bind Menu
-    {label = 'None', description = 'Select to create a new emote bind', icon = 'fa-solid fa-1', args = 'animations_create_bind'},
-    {label = 'None', description = 'Select to create a new emote bind', icon = 'fa-solid fa-2', args = 'animations_create_bind'},
-    {label = 'None', description = 'Select to create a new emote bind', icon = 'fa-solid fa-3', args = 'animations_create_bind'},
-    {label = 'None', description = 'Select to create a new emote bind', icon = 'fa-solid fa-4', args = 'animations_create_bind'},
-    {label = 'None', description = 'Select to create a new emote bind', icon = 'fa-solid fa-5', args = 'animations_create_bind'}
+    {label = 'Aucune', description = 'Selectionner pour créer un raccourci', icon = 'fa-solid fa-1', args = 'animations_create_bind'},
+    {label = 'Aucune', description = 'Selectionner pour créer un raccourci', icon = 'fa-solid fa-2', args = 'animations_create_bind'},
+    {label = 'Aucune', description = 'Selectionner pour créer un raccourci', icon = 'fa-solid fa-3', args = 'animations_create_bind'},
+    {label = 'Aucune', description = 'Selectionner pour créer un raccourci', icon = 'fa-solid fa-4', args = 'animations_create_bind'},
+    {label = 'Aucune', description = 'Selectionner pour créer un raccourci', icon = 'fa-solid fa-5', args = 'animations_create_bind'}
 }
 
 -- Functions
@@ -683,7 +683,7 @@ if Config.EnableEmoteBinds then
     for i = 1, #binds do
         local bind = binds[i]
         if bind then
-            emoteMenuBindsOptions[i] = {label = bind.Label, description = 'Click to delete the bind', icon = ('fa-solid fa-%s'):format(i), args = bind.Index}
+            emoteMenuBindsOptions[i] = {label = bind.Label, description = 'Clique pour supprimer le raccourci', icon = ('fa-solid fa-%s'):format(i), args = bind.Index}
         end
     end
 else
@@ -726,7 +726,7 @@ lib.registerMenu({
 }, function(selected, scrollIndex, option)
     if EmoteMenu.isActionsLimited then return end
     if option == 'animations_search' then
-        local query = lib.inputDialog('Animation Search', {'Animation'})
+        local query = lib.inputDialog("Recherche d'animation", {'Animation'})
         if not query then return end
         EmoteMenu.Search(string.lower(query[1]))
         return
