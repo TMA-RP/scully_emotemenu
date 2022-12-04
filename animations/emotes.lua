@@ -1401,6 +1401,17 @@ AnimationList.Emotes = {
         },
     },
     {
+        Label = 'Hold holster',
+        Command = 'holdholster',
+        Animation = 'intro',
+        Dictionary = 'reaction@intimidation@cop@unarmed',
+        Options = {
+              Flags = {
+                    Stuck = true,
+              },
+        },
+    },
+    {
         Label = 'Hug',
         Command = 'hug',
         Animation = 'kisses_guy_a',
