@@ -21,28 +21,28 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Backpack',
---         Command = 'backpack',
---         Animation = 'nill',
---         Dictionary = 'move_p_m_zero_rucksack',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 24818,
---                     Name = 'p_michael_backpack_s',
---                     Placement = {
---                         vector3(0.070000, -0.110000, -0.050000),
---                         vector3(0.000000, 90.000000, 175.000000),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Backpack',
+    --         Command = 'backpack',
+    --         Animation = 'nill',
+    --         Dictionary = 'move_p_m_zero_rucksack',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 24818,
+    --                     Name = 'p_michael_backpack_s',
+    --                     Placement = {
+    --                         vector3(0.070000, -0.110000, -0.050000),
+    --                         vector3(0.000000, 90.000000, 175.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'Basketball',
         Command = 'bball',
@@ -327,50 +327,50 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Binoculars',
---         Command = 'binoculars',
---         Animation = 'idle_f',
---         Dictionary = 'amb@world_human_binoculars@male@idle_b',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_binoc_01',
---                     Placement = {
---                         vector3(0.000000, 0.000000, 0.000000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Binoculars 2',
---         Command = 'binoculars2',
---         Animation = 'idle_c',
---         Dictionary = 'amb@world_human_binoculars@male@idle_a',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_binoc_01',
---                     Placement = {
---                         vector3(0.000000, 0.000000, 0.000000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Binoculars',
+    --         Command = 'binoculars',
+    --         Animation = 'idle_f',
+    --         Dictionary = 'amb@world_human_binoculars@male@idle_b',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_binoc_01',
+    --                     Placement = {
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Binoculars 2',
+    --         Command = 'binoculars2',
+    --         Animation = 'idle_c',
+    --         Dictionary = 'amb@world_human_binoculars@male@idle_a',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_binoc_01',
+    --                     Placement = {
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'Bong',
         Command = 'bong',
@@ -1235,72 +1235,72 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Cig',
---         Command = 'cig',
---         Animation = 'enter',
---         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
---         Options = {
---             Duration = 2600,
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 47419,
---                     Name = 'prop_amb_ciggy_01',
---                     Placement = {
---                         vector3(0.015000, -0.009000, 0.003000),
---                         vector3(55.000000, 0.000000, 110.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Cigar',
---         Command = 'cigar',
---         Animation = 'enter',
---         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
---         Options = {
---             Duration = 2600,
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 47419,
---                     Name = 'prop_cigar_02',
---                     Placement = {
---                         vector3(0.010000, 0.000000, 0.000000),
---                         vector3(50.000000, 0.000000, -80.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Cigar 2',
---         Command = 'cigar2',
---         Animation = 'enter',
---         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
---         Options = {
---             Duration = 2600,
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 47419,
---                     Name = 'prop_cigar_01',
---                     Placement = {
---                         vector3(0.010000, 0.000000, 0.000000),
---                         vector3(50.000000, 0.000000, -80.000000),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Cig',
+    --         Command = 'cig',
+    --         Animation = 'enter',
+    --         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
+    --         Options = {
+    --             Duration = 2600,
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 47419,
+    --                     Name = 'prop_amb_ciggy_01',
+    --                     Placement = {
+    --                         vector3(0.015000, -0.009000, 0.003000),
+    --                         vector3(55.000000, 0.000000, 110.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Cigar',
+    --         Command = 'cigar',
+    --         Animation = 'enter',
+    --         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
+    --         Options = {
+    --             Duration = 2600,
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 47419,
+    --                     Name = 'prop_cigar_02',
+    --                     Placement = {
+    --                         vector3(0.010000, 0.000000, 0.000000),
+    --                         vector3(50.000000, 0.000000, -80.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Cigar 2',
+    --         Command = 'cigar2',
+    --         Animation = 'enter',
+    --         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
+    --         Options = {
+    --             Duration = 2600,
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 47419,
+    --                     Name = 'prop_cigar_01',
+    --                     Placement = {
+    --                         vector3(0.010000, 0.000000, 0.000000),
+    --                         vector3(50.000000, 0.000000, -80.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'Clean',
         Command = 'clean',
@@ -2071,50 +2071,50 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Fuel',
---         Command = 'fuel',
---         Animation = 'fire',
---         Dictionary = 'weapons@misc@jerrycan@',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 57005,
---                     Name = 'w_am_jerrycan',
---                     Placement = {
---                         vector3(0.180000, 0.130000, -0.240000),
---                         vector3(-165.869385, -11.212276, -32.945301),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Fuel 2 (Carry)',
---         Command = 'fuel2',
---         Animation = 'idle',
---         Dictionary = 'weapons@misc@jerrycan@franklin',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'w_am_jerrycan',
---                     Placement = {
---                         vector3(0.260000, 0.050000, 0.030000),
---                         vector3(80.000000, 180.000000, 79.989998),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Fuel',
+    --         Command = 'fuel',
+    --         Animation = 'fire',
+    --         Dictionary = 'weapons@misc@jerrycan@',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 57005,
+    --                     Name = 'w_am_jerrycan',
+    --                     Placement = {
+    --                         vector3(0.180000, 0.130000, -0.240000),
+    --                         vector3(-165.869385, -11.212276, -32.945301),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Fuel 2 (Carry)',
+    --         Command = 'fuel2',
+    --         Animation = 'idle',
+    --         Dictionary = 'weapons@misc@jerrycan@franklin',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'w_am_jerrycan',
+    --                     Placement = {
+    --                         vector3(0.260000, 0.050000, 0.030000),
+    --                         vector3(80.000000, 180.000000, 79.989998),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'Gamer',
         Command = 'gamer',
@@ -2855,36 +2855,36 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Hitchhike',
---         Command = 'hitchhike',
---         Animation = 'idle_f',
---         Dictionary = 'random@hitch_lift',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 18905,
---                     Name = 'w_am_jerrycan',
---                     Placement = {
---                         vector3(0.320000, -0.010000, 0.000000),
---                         vector3(-162.423004, 74.830002, 58.790001),
---                     },
---                 },
---                 {
---                     Bone = 40269,
---                     Name = 'prop_michael_backpack',
---                     Placement = {
---                         vector3(-0.070000, -0.210000, -0.110000),
---                         vector3(-144.929993, 117.358002, -6.160000),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Hitchhike',
+    --         Command = 'hitchhike',
+    --         Animation = 'idle_f',
+    --         Dictionary = 'random@hitch_lift',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 18905,
+    --                     Name = 'w_am_jerrycan',
+    --                     Placement = {
+    --                         vector3(0.320000, -0.010000, 0.000000),
+    --                         vector3(-162.423004, 74.830002, 58.790001),
+    --                     },
+    --                 },
+    --                 {
+    --                     Bone = 40269,
+    --                     Name = 'prop_michael_backpack',
+    --                     Placement = {
+    --                         vector3(-0.070000, -0.210000, -0.110000),
+    --                         vector3(-144.929993, 117.358002, -6.160000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'Hold Firework',
         Command = 'holdfw',
@@ -2909,7 +2909,7 @@ AnimationList.PropEmotes = {
                 Asset = 'scr_indep_fireworks',
                 AttachToProp = true,
                 CanHold = true,
-                Color = {R = 255, G = 0, B = 0, A = 1.0},
+                Color = { R = 255, G = 0, B = 0, A = 1.0 },
                 Name = 'scr_indep_firework_trail_spawn',
                 Placement = {
                     vector3(0.000000, 0.000000, 0.000000),
@@ -2979,9 +2979,9 @@ AnimationList.PropEmotes = {
                 AttachToProp = true,
                 CanHold = true,
                 Color = {
-                    {R = 255, G = 0, B = 0, A = 1.0}, 
-                    {R = 0, G = 255, B = 0, A = 1.0}, 
-                    {R = 0, G = 0, B = 255, A = 1.0}
+                    { R = 255, G = 0, B = 0, A = 1.0 },
+                    { R = 0, G = 255, B = 0, A = 1.0 },
+                    { R = 0, G = 0, B = 255, A = 1.0 }
                 },
                 Name = 'scr_indep_firework_trail_spawn',
                 Placement = {
@@ -3017,14 +3017,14 @@ AnimationList.PropEmotes = {
                 Asset = 'scr_rcpaparazzo1',
                 AttachToProp = true,
                 Color = {
-                    {R = 255, G = 0, B = 0, A = 1.0},
-                    {R = 0, G = 255, B = 0, A = 1.0},
-                    {R = 0, G = 0, B = 255, A = 1.0},
-                    {R = 177, G = 5, B = 245, A = 1.0},
-                    {R = 251, G = 3, B = 255, A = 1.0},
-                    {R = 2, G = 238, B = 250, A = 1.0},
-                    {R = 252, G = 248, B = 0, A = 1.0},
-                    {R = 245, G = 245, B = 245, A = 1.0}
+                    { R = 255, G = 0, B = 0, A = 1.0 },
+                    { R = 0, G = 255, B = 0, A = 1.0 },
+                    { R = 0, G = 0, B = 255, A = 1.0 },
+                    { R = 177, G = 5, B = 245, A = 1.0 },
+                    { R = 251, G = 3, B = 255, A = 1.0 },
+                    { R = 2, G = 238, B = 250, A = 1.0 },
+                    { R = 252, G = 248, B = 0, A = 1.0 },
+                    { R = 245, G = 245, B = 245, A = 1.0 }
                 },
                 Name = 'scr_mich4_firework_trailburst',
                 Placement = {
@@ -3058,174 +3058,174 @@ AnimationList.PropEmotes = {
         },
         NSFW = true,
     },
---     {
---         Label = 'ID Card 1',
---         Command = 'idcard',
---         Animation = 'player_one_dual-8',
---         Dictionary = 'paper_1_rcm_alt1-8',
---         Options = {
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 57005,
---                     Name = 'prop_franklin_dl',
---                     Placement = {
---                         vector3(0.100000, 0.020000, -0.030000),
---                         vector3(-90.000000, 170.000000, 78.999001),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'ID Card 2 - FIB',
---         Command = 'idcardb',
---         Animation = 'player_one_dual-8',
---         Dictionary = 'paper_1_rcm_alt1-8',
---         Options = {
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_fib_badge',
---                     Placement = {
---                         vector3(0.060000, 0.021000, -0.040000),
---                         vector3(-90.000000, -180.000000, 78.999001),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'ID Card 3',
---         Command = 'idcardc',
---         Animation = 'player_one_dual-8',
---         Dictionary = 'paper_1_rcm_alt1-8',
---         Options = {
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_michael_sec_id',
---                     Placement = {
---                         vector3(0.100000, 0.020000, -0.030000),
---                         vector3(-90.000000, -180.000000, 78.999001),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'ID Card 4',
---         Command = 'idcardd',
---         Animation = 'player_one_dual-8',
---         Dictionary = 'paper_1_rcm_alt1-8',
---         Options = {
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_trev_sec_id',
---                     Placement = {
---                         vector3(0.100000, 0.020000, -0.030000),
---                         vector3(-90.000000, -180.000000, 78.999001),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'ID Card 5',
---         Command = 'idcarde',
---         Animation = 'player_one_dual-8',
---         Dictionary = 'paper_1_rcm_alt1-8',
---         Options = {
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'p_ld_id_card_002',
---                     Placement = {
---                         vector3(0.100000, 0.020000, -0.030000),
---                         vector3(-90.000000, -180.000000, 78.999001),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'ID Card 6',
---         Command = 'idcardf',
---         Animation = 'player_one_dual-8',
---         Dictionary = 'paper_1_rcm_alt1-8',
---         Options = {
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_cs_r_business_card',
---                     Placement = {
---                         vector3(0.100000, 0.020000, -0.030000),
---                         vector3(-90.000000, -180.000000, 78.999001),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'ID Card 7',
---         Command = 'idcardg',
---         Animation = 'player_one_dual-8',
---         Dictionary = 'paper_1_rcm_alt1-8',
---         Options = {
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_michael_sec_id',
---                     Placement = {
---                         vector3(0.100000, 0.020000, -0.030000),
---                         vector3(-90.000000, -180.000000, 78.999001),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'ID Card 8',
---         Command = 'idcardh',
---         Animation = 'player_one_dual-8',
---         Dictionary = 'paper_1_rcm_alt1-8',
---         Options = {
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_lspd_badge',
---                     Placement = {
---                         vector3(0.080000, -0.012000, -0.060000),
---                         vector3(-90.000000, 180.000000, 69.989998),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'ID Card 1',
+    --         Command = 'idcard',
+    --         Animation = 'player_one_dual-8',
+    --         Dictionary = 'paper_1_rcm_alt1-8',
+    --         Options = {
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 57005,
+    --                     Name = 'prop_franklin_dl',
+    --                     Placement = {
+    --                         vector3(0.100000, 0.020000, -0.030000),
+    --                         vector3(-90.000000, 170.000000, 78.999001),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'ID Card 2 - FIB',
+    --         Command = 'idcardb',
+    --         Animation = 'player_one_dual-8',
+    --         Dictionary = 'paper_1_rcm_alt1-8',
+    --         Options = {
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_fib_badge',
+    --                     Placement = {
+    --                         vector3(0.060000, 0.021000, -0.040000),
+    --                         vector3(-90.000000, -180.000000, 78.999001),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'ID Card 3',
+    --         Command = 'idcardc',
+    --         Animation = 'player_one_dual-8',
+    --         Dictionary = 'paper_1_rcm_alt1-8',
+    --         Options = {
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_michael_sec_id',
+    --                     Placement = {
+    --                         vector3(0.100000, 0.020000, -0.030000),
+    --                         vector3(-90.000000, -180.000000, 78.999001),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'ID Card 4',
+    --         Command = 'idcardd',
+    --         Animation = 'player_one_dual-8',
+    --         Dictionary = 'paper_1_rcm_alt1-8',
+    --         Options = {
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_trev_sec_id',
+    --                     Placement = {
+    --                         vector3(0.100000, 0.020000, -0.030000),
+    --                         vector3(-90.000000, -180.000000, 78.999001),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'ID Card 5',
+    --         Command = 'idcarde',
+    --         Animation = 'player_one_dual-8',
+    --         Dictionary = 'paper_1_rcm_alt1-8',
+    --         Options = {
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'p_ld_id_card_002',
+    --                     Placement = {
+    --                         vector3(0.100000, 0.020000, -0.030000),
+    --                         vector3(-90.000000, -180.000000, 78.999001),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'ID Card 6',
+    --         Command = 'idcardf',
+    --         Animation = 'player_one_dual-8',
+    --         Dictionary = 'paper_1_rcm_alt1-8',
+    --         Options = {
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_cs_r_business_card',
+    --                     Placement = {
+    --                         vector3(0.100000, 0.020000, -0.030000),
+    --                         vector3(-90.000000, -180.000000, 78.999001),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'ID Card 7',
+    --         Command = 'idcardg',
+    --         Animation = 'player_one_dual-8',
+    --         Dictionary = 'paper_1_rcm_alt1-8',
+    --         Options = {
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_michael_sec_id',
+    --                     Placement = {
+    --                         vector3(0.100000, 0.020000, -0.030000),
+    --                         vector3(-90.000000, -180.000000, 78.999001),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'ID Card 8',
+    --         Command = 'idcardh',
+    --         Animation = 'player_one_dual-8',
+    --         Dictionary = 'paper_1_rcm_alt1-8',
+    --         Options = {
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_lspd_badge',
+    --                     Placement = {
+    --                         vector3(0.080000, -0.012000, -0.060000),
+    --                         vector3(-90.000000, 180.000000, 69.989998),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'JerkOff! Female',
         Command = 'jerkf',
@@ -3249,28 +3249,28 @@ AnimationList.PropEmotes = {
         },
         NSFW = true,
     },
---     {
---         Label = 'Joint',
---         Command = 'joint',
---         Animation = 'enter',
---         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
---         Options = {
---             Duration = 2600,
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 47419,
---                     Name = 'p_cs_joint_02',
---                     Placement = {
---                         vector3(0.015000, -0.009000, 0.003000),
---                         vector3(55.000000, 0.000000, 110.000000),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Joint',
+    --         Command = 'joint',
+    --         Animation = 'enter',
+    --         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
+    --         Options = {
+    --             Duration = 2600,
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 47419,
+    --                     Name = 'p_cs_joint_02',
+    --                     Placement = {
+    --                         vector3(0.015000, -0.009000, 0.003000),
+    --                         vector3(55.000000, 0.000000, 110.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'Lawnchair',
         Command = 'lawnchair',
@@ -3386,7 +3386,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -3922,7 +3922,7 @@ AnimationList.PropEmotes = {
                         vector3(-107.999901, 0.000000, -4.600300),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4153,7 +4153,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4177,7 +4177,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4201,7 +4201,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4367,72 +4367,72 @@ AnimationList.PropEmotes = {
         },
         NSFW = true,
     },
---     {
---         Label = 'Pot Plant (Small)',
---         Command = 'potplant',
---         Animation = 'idle',
---         Dictionary = 'anim@heists@box_carry@',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 60309,
---                     Name = 'bkr_prop_weed_01_small_01c',
---                     Placement = {
---                         vector3(0.138000, -0.050000, 0.230000),
---                         vector3(-50.000000, 290.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Pot Plant (Medium)',
---         Command = 'potplant2',
---         Animation = 'idle',
---         Dictionary = 'anim@heists@box_carry@',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 60309,
---                     Name = 'bkr_prop_weed_01_small_01b',
---                     Placement = {
---                         vector3(0.138000, -0.050000, 0.230000),
---                         vector3(-50.000000, 290.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Pot Plant (Large)',
---         Command = 'potplant3',
---         Animation = 'idle',
---         Dictionary = 'anim@heists@box_carry@',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 60309,
---                     Name = 'bkr_prop_weed_lrg_01b',
---                     Placement = {
---                         vector3(0.138000, -0.050000, 0.230000),
---                         vector3(-50.000000, 290.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Pot Plant (Small)',
+    --         Command = 'potplant',
+    --         Animation = 'idle',
+    --         Dictionary = 'anim@heists@box_carry@',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 60309,
+    --                     Name = 'bkr_prop_weed_01_small_01c',
+    --                     Placement = {
+    --                         vector3(0.138000, -0.050000, 0.230000),
+    --                         vector3(-50.000000, 290.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Pot Plant (Medium)',
+    --         Command = 'potplant2',
+    --         Animation = 'idle',
+    --         Dictionary = 'anim@heists@box_carry@',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 60309,
+    --                     Name = 'bkr_prop_weed_01_small_01b',
+    --                     Placement = {
+    --                         vector3(0.138000, -0.050000, 0.230000),
+    --                         vector3(-50.000000, 290.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Pot Plant (Large)',
+    --         Command = 'potplant3',
+    --         Animation = 'idle',
+    --         Dictionary = 'anim@heists@box_carry@',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 60309,
+    --                     Name = 'bkr_prop_weed_lrg_01b',
+    --                     Placement = {
+    --                         vector3(0.138000, -0.050000, 0.230000),
+    --                         vector3(-50.000000, 290.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'Propose',
         Command = 'propose',
@@ -4822,7 +4822,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4846,7 +4846,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4870,7 +4870,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4894,7 +4894,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4918,7 +4918,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4942,7 +4942,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4966,7 +4966,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -4990,7 +4990,7 @@ AnimationList.PropEmotes = {
                         vector3(-126.268700, -139.905807, 35.620300),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5025,7 +5025,7 @@ AnimationList.PropEmotes = {
                         vector3(-142.137405, -92.414200, 33.169102),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5059,7 +5059,7 @@ AnimationList.PropEmotes = {
                         vector3(-13.429900, 47.228802, -14.958800),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5093,7 +5093,7 @@ AnimationList.PropEmotes = {
                         vector3(-150.479797, -67.823997, -46.041698),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5127,7 +5127,7 @@ AnimationList.PropEmotes = {
                         vector3(-90.000000, 0.000000, -25.900000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5161,7 +5161,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, -150.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5195,7 +5195,7 @@ AnimationList.PropEmotes = {
                         vector3(-150.479797, -67.823997, -46.041698),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5229,7 +5229,7 @@ AnimationList.PropEmotes = {
                         vector3(-14.786000, 67.803001, 6.182700),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5263,7 +5263,7 @@ AnimationList.PropEmotes = {
                         vector3(-45.893600, 41.837200, -26.641500),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5297,7 +5297,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 10.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5331,7 +5331,7 @@ AnimationList.PropEmotes = {
                         vector3(-155.351501, -84.482803, 4.755100),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5365,7 +5365,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 3.999900, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5399,7 +5399,7 @@ AnimationList.PropEmotes = {
                         vector3(90.000000, 180.000000, 13.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5433,7 +5433,7 @@ AnimationList.PropEmotes = {
                         vector3(-158.827103, -82.903999, -18.747200),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5475,7 +5475,7 @@ AnimationList.PropEmotes = {
                         vector3(-8.594700, 30.614100, -5.131100),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5509,7 +5509,7 @@ AnimationList.PropEmotes = {
                         vector3(98.682198, -4.980900, 109.621597),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5543,7 +5543,7 @@ AnimationList.PropEmotes = {
                         vector3(-180.000000, -180.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5585,7 +5585,7 @@ AnimationList.PropEmotes = {
                         vector3(10.680800, 13.752600, 2.645700),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5620,7 +5620,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 170.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5655,7 +5655,7 @@ AnimationList.PropEmotes = {
                         vector3(174.961594, -149.618698, 8.649100),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5690,7 +5690,7 @@ AnimationList.PropEmotes = {
                         vector3(174.961594, -149.618698, 8.649100),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5725,7 +5725,7 @@ AnimationList.PropEmotes = {
                         vector3(174.961594, -149.618698, 8.649100),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5760,7 +5760,7 @@ AnimationList.PropEmotes = {
                         vector3(174.961594, -149.618698, 8.649100),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5795,7 +5795,7 @@ AnimationList.PropEmotes = {
                         vector3(-160.280197, -99.407997, -3.404800),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -5928,138 +5928,138 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Smoke 2',
---         Command = 'smoke2',
---         Animation = 'idle_c',
---         Dictionary = 'amb@world_human_aa_smoke@male@idle_a',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_cs_ciggy_01',
---                     Placement = {
---                         vector3(0.000000, 0.000000, 0.000000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Smoke 3',
---         Command = 'smoke3',
---         Animation = 'idle_b',
---         Dictionary = 'amb@world_human_aa_smoke@male@idle_a',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_cs_ciggy_01',
---                     Placement = {
---                         vector3(0.000000, 0.000000, 0.000000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Smoke 4',
---         Command = 'smoke4',
---         Animation = 'idle_b',
---         Dictionary = 'amb@world_human_smoking@female@idle_a',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_cs_ciggy_01',
---                     Placement = {
---                         vector3(0.000000, 0.000000, 0.000000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Smoke 5',
---         Command = 'smoke5',
---         Animation = 'idle_c',
---         Dictionary = 'amb@world_human_aa_smoke@male@idle_a',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'bzzz_cigarpack_cig002',
---                     Placement = {
---                         vector3(0.000000, 0.000000, 0.000000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Smoke 6',
---         Command = 'smoke6',
---         Animation = 'enter',
---         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
---         Options = {
---             Duration = 2600,
---             Flags = {
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 47419,
---                     Name = 'bzzz_cigarpack_cig001',
---                     Placement = {
---                         vector3(0.010000, 0.000000, 0.000000),
---                         vector3(50.000000, 0.000000, -80.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Smoke 7',
---         Command = 'smoke7',
---         Animation = 'idle_b',
---         Dictionary = 'amb@world_human_aa_smoke@male@idle_a',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'bzzz_cigarpack_cig003',
---                     Placement = {
---                         vector3(0.000000, 0.000000, 0.000000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Smoke 2',
+    --         Command = 'smoke2',
+    --         Animation = 'idle_c',
+    --         Dictionary = 'amb@world_human_aa_smoke@male@idle_a',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_cs_ciggy_01',
+    --                     Placement = {
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Smoke 3',
+    --         Command = 'smoke3',
+    --         Animation = 'idle_b',
+    --         Dictionary = 'amb@world_human_aa_smoke@male@idle_a',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_cs_ciggy_01',
+    --                     Placement = {
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Smoke 4',
+    --         Command = 'smoke4',
+    --         Animation = 'idle_b',
+    --         Dictionary = 'amb@world_human_smoking@female@idle_a',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_cs_ciggy_01',
+    --                     Placement = {
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Smoke 5',
+    --         Command = 'smoke5',
+    --         Animation = 'idle_c',
+    --         Dictionary = 'amb@world_human_aa_smoke@male@idle_a',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'bzzz_cigarpack_cig002',
+    --                     Placement = {
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Smoke 6',
+    --         Command = 'smoke6',
+    --         Animation = 'enter',
+    --         Dictionary = 'amb@world_human_smoking@male@male_a@enter',
+    --         Options = {
+    --             Duration = 2600,
+    --             Flags = {
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 47419,
+    --                     Name = 'bzzz_cigarpack_cig001',
+    --                     Placement = {
+    --                         vector3(0.010000, 0.000000, 0.000000),
+    --                         vector3(50.000000, 0.000000, -80.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Smoke 7',
+    --         Command = 'smoke7',
+    --         Animation = 'idle_b',
+    --         Dictionary = 'amb@world_human_aa_smoke@male@idle_a',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'bzzz_cigarpack_cig003',
+    --                     Placement = {
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'SMS',
         Command = 'sms',
@@ -6079,7 +6079,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -6103,7 +6103,7 @@ AnimationList.PropEmotes = {
                         vector3(0.000000, 0.000000, 0.000000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -6126,7 +6126,7 @@ AnimationList.PropEmotes = {
                         vector3(18.990000, -72.070000, 6.390000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -6149,7 +6149,7 @@ AnimationList.PropEmotes = {
                         vector3(19.170000, -78.500000, 14.970000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
             Ptfx = {
@@ -6183,7 +6183,7 @@ AnimationList.PropEmotes = {
                         vector3(2.309000, 88.845001, 29.979000),
                     },
                     Variant = 0,
-                    Variations = {0, 1, 2, 3, 4, 5, 6, 7},
+                    Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
                 },
             },
         },
@@ -6878,40 +6878,40 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Vape',
---         Command = 'vape',
---         Animation = 'base',
---         Dictionary = 'amb@world_human_smoking@male@male_b@base',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'ba_prop_battle_vape_01',
---                     Placement = {
---                         vector3(-0.029000, 0.007000, -0.005000),
---                         vector3(91.000000, 270.000000, -360.000000),
---                     },
---                 },
---             },
---             Ptfx = {
---                 Asset = 'core',
---                 CanHold = true,
---                 Color = {R = 1.0, G = 1.0, B = 1.0, A = 1.0},
---                 Name = 'exp_grd_bzgas_smoke',
---                 Placement = {
---                     vector3(-0.010000, 0.060000, 0.660000),
---                     vector3(0.000000, 0.000000, 0.000000),
---                     2.0,
---                 },
---                 Wait = 0,
---             },
---         },
---     },
+    --     {
+    --         Label = 'Vape',
+    --         Command = 'vape',
+    --         Animation = 'base',
+    --         Dictionary = 'amb@world_human_smoking@male@male_b@base',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'ba_prop_battle_vape_01',
+    --                     Placement = {
+    --                         vector3(-0.029000, 0.007000, -0.005000),
+    --                         vector3(91.000000, 270.000000, -360.000000),
+    --                     },
+    --                 },
+    --             },
+    --             Ptfx = {
+    --                 Asset = 'core',
+    --                 CanHold = true,
+    --                 Color = {R = 1.0, G = 1.0, B = 1.0, A = 1.0},
+    --                 Name = 'exp_grd_bzgas_smoke',
+    --                 Placement = {
+    --                     vector3(-0.010000, 0.060000, 0.660000),
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                     2.0,
+    --                 },
+    --                 Wait = 0,
+    --             },
+    --         },
+    --     },
     {
         Label = 'Watch Stripper 2',
         Command = 'watchstripper2',
@@ -6957,72 +6957,72 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Weed Brick',
---         Command = 'weedbrick',
---         Animation = 'mp_m_waremech_01_dual-0',
---         Dictionary = 'impexp_int-0',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 60309,
---                     Name = 'prop_weed_block_01',
---                     Placement = {
---                         vector3(0.100000, 0.100000, 0.050000),
---                         vector3(0.000000, -90.000000, 90.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Weed Brick BIG',
---         Command = 'weedbrick2',
---         Animation = 'idle',
---         Dictionary = 'anim@heists@box_carry@',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 60309,
---                     Name = 'bkr_prop_weed_bigbag_01a',
---                     Placement = {
---                         vector3(0.158000, -0.050000, 0.230000),
---                         vector3(-50.000000, 290.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Weed Bucket',
---         Command = 'weedbucket',
---         Animation = 'idle',
---         Dictionary = 'anim@heists@box_carry@',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'bkr_prop_weed_bucket_open_01a',
---                     Placement = {
---                         vector3(0.000000, -0.100000, -0.180000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
+    --     {
+    --         Label = 'Weed Brick',
+    --         Command = 'weedbrick',
+    --         Animation = 'mp_m_waremech_01_dual-0',
+    --         Dictionary = 'impexp_int-0',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 60309,
+    --                     Name = 'prop_weed_block_01',
+    --                     Placement = {
+    --                         vector3(0.100000, 0.100000, 0.050000),
+    --                         vector3(0.000000, -90.000000, 90.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Weed Brick BIG',
+    --         Command = 'weedbrick2',
+    --         Animation = 'idle',
+    --         Dictionary = 'anim@heists@box_carry@',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 60309,
+    --                     Name = 'bkr_prop_weed_bigbag_01a',
+    --                     Placement = {
+    --                         vector3(0.158000, -0.050000, 0.230000),
+    --                         vector3(-50.000000, 290.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Weed Bucket',
+    --         Command = 'weedbucket',
+    --         Animation = 'idle',
+    --         Dictionary = 'anim@heists@box_carry@',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'bkr_prop_weed_bucket_open_01a',
+    --                     Placement = {
+    --                         vector3(0.000000, -0.100000, -0.180000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
     {
         Label = 'Weights',
         Command = 'weights',
@@ -7219,49 +7219,48 @@ AnimationList.PropEmotes = {
             },
         },
     },
---     {
---         Label = 'Walkie Talkie',
---         Command = 'wt',
---         Animation = 'cellphone_text_read_base',
---         Dictionary = 'cellphone@',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 28422,
---                     Name = 'prop_cs_hand_radio',
---                     Placement = {
---                         vector3(0.000000, 0.000000, 0.000000),
---                         vector3(0.000000, 0.000000, 0.000000),
---                     },
---                 },
---             },
---         },
---     },
---     {
---         Label = 'Walkie Talkie 2',
---         Command = 'wt2',
---         Animation = 'walkie_talkie',
---         Dictionary = 'ultra@walkie_talkie',
---         Options = {
---             Flags = {
---                 Loop = true,
---                 Move = true,
---             },
---             Props = {
---                 {
---                     Bone = 18905,
---                     Name = 'prop_cs_hand_radio',
---                     Placement = {
---                         vector3(0.140000, 0.030000, 0.030000),
---                         vector3(-105.877000, -10.943200, -33.721200),
---                     },
---                 },
---             },
---         },
---     }
+    --     {
+    --         Label = 'Walkie Talkie',
+    --         Command = 'wt',
+    --         Animation = 'cellphone_text_read_base',
+    --         Dictionary = 'cellphone@',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 28422,
+    --                     Name = 'prop_cs_hand_radio',
+    --                     Placement = {
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                         vector3(0.000000, 0.000000, 0.000000),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     {
+    --         Label = 'Walkie Talkie 2',
+    --         Command = 'wt2',
+    --         Animation = 'walkie_talkie',
+    --         Dictionary = 'ultra@walkie_talkie',
+    --         Options = {
+    --             Flags = {
+    --                 Loop = true,
+    --                 Move = true,
+    --             },
+    --             Props = {
+    --                 {
+    --                     Bone = 18905,
+    --                     Name = 'prop_cs_hand_radio',
+    --                     Placement = {
+    --                         vector3(0.140000, 0.030000, 0.030000),
+    --                         vector3(-105.877000, -10.943200, -33.721200),
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     }
 }
-
