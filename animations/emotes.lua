@@ -5025,5 +5025,60 @@ AnimationList.Emotes = {
                 Move = true,
             },
         },
-    }
+    },
+    {
+        Label = 'Zombie Agony',
+        Command = 'zombieagony',
+        Animation = 'agony',
+        Dictionary = 'zombies_animations',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+        },
+    },
+    {
+        Label = 'Zombie Crawl',
+        Command = 'zombiecrawl',
+        Animation = 'crawl_0-2',
+        Dictionary = 'zombies_animations',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+        },
+    },
+    {
+        Label = 'Zombie Scream',
+        Command = 'zombiescream',
+        Animation = 'scream',
+        Dictionary = 'zombies_animations',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+        },
+    },
+    {
+        Label = 'Zombie Walk',
+        Command = 'zombiewalk',
+        Animation = 'zombi_walk_0-2',
+        Dictionary = 'zombies_animations',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+        },
+    },
+    {
+        Label = 'Zombie Walk 2',
+        Command = 'zombiewalk2',
+        Animation = 'zombi_walk_02',
+        Dictionary = 'zombies_animations',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+        },
+    },
 }
