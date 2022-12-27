@@ -319,8 +319,14 @@ function EmoteMenu.Play(data, variation)
         return
     end
 
+    if Config.EnableWeaponBlock and IsPedArmed(cache.ped, 7) then
+        EmoteMenu.Notify('error', 'You can\'t play animations with a weapon!')
+        return
+    end
+
     local isInVehicle = IsPedInAnyVehicle(cache.ped, true)
     local duration, movementFlag = nil, isInVehicle and 51 or 0
+
     if not Config.AllowedInVehicles and isInVehicle then
         EmoteMenu.Notify('error', "Impossible de faire l'animation en véhicule")
         return
@@ -335,6 +341,7 @@ function EmoteMenu.Play(data, variation)
             EmoteMenu.Notify('error', "Impossible de faire l'animation en véhicule")
             return
         end
+
         ClearPedTasks(cache.ped)
         TaskStartScenarioInPlace(cache.ped, data.Scenario, 0, true)
         EmoteMenu.IsPlayingAnimation = true
@@ -370,6 +377,7 @@ function EmoteMenu.Play(data, variation)
         if data.Options.Ptfx then
             hasAutomatedPtfx = Config.EnableAutoPtfx and data.Options.Ptfx.Auto
             EmoteMenu.PtfxCanHold = data.Options.Ptfx.CanHold
+
             if Config.PtfxKeybind and not hasAutomatedPtfx then
                 EmoteMenu.Keybinds.PlayPtfx:disable(false)
                 EmoteMenu.Notify('success',
@@ -1060,6 +1068,7 @@ end
 if Config.PtfxKeybind then
     EmoteMenu.Keybinds.PlayPtfx = lib.addKeybind({
         name = 'playptfx',
+        disabled = true,
         description = 'Animation - Activer les effets (Flashs, billets, etc...)',
         defaultKey = Config.PtfxKeybind,
         onPressed = function(key)
@@ -1079,28 +1088,37 @@ end
 -- State Bag Handlers
 AddStateBagChangeHandler('ptfx', nil, function(bagName, key, value, _unused, replicated)
     local serverId = tonumber(bagName:gsub('player:', ''), 10)
+
     if (EmoteMenu.PlayerParticles[serverId] and value) or (not EmoteMenu.PlayerParticles[serverId] and not value) then return end
+
     local playerId = GetPlayerFromServerId(serverId)
+
     if not playerId then return end
+
     local playerPed = GetPlayerPed(playerId)
     local stateBag = Player(serverId).state
+
     if value then
         local asset, name, offset, rot, scale, color, propNet, entityTarget = stateBag.ptfxAsset, stateBag.ptfxName,
             stateBag.ptfxOffset, stateBag.ptfxRot, stateBag.ptfxScale or 1, stateBag.ptfxColor, stateBag.ptfxPropNet,
             playerPed
+
         if propNet then
             local propObj = NetToObj(propNet)
             if DoesEntityExist(propObj) then entityTarget = propObj end
         end
+
         lib.requestNamedPtfxAsset(asset, 1000)
         UseParticleFxAsset(asset)
         EmoteMenu.PlayerParticles[serverId] = StartParticleFxLoopedOnEntityBone(name, entityTarget, offset.x, offset.y,
             offset.z, rot.x, rot.y, rot.z, GetEntityBoneIndexByName(name, 'VFX'), scale + 0.0, false, false, false)
-        if stateBag.ptfxColor then
+
+        if color then
             if color[1] and type(color[1]) == 'table' then
                 local randomIndex = math.random(1, #color)
                 color = color[randomIndex]
             end
+
             SetParticleFxLoopedAlpha(EmoteMenu.PlayerParticles[serverId], color.A)
             SetParticleFxLoopedColour(EmoteMenu.PlayerParticles[serverId], color.R / 255, color.G / 255, color.B / 255,
                 false)
@@ -1213,14 +1231,24 @@ RegisterNetEvent('scully_emotemenu:senderStartSynchronizedEmote', function(targe
 
     local targetId = GetPlayerFromServerId(target)
     local targetPed = GetPlayerPed(targetId)
-    local frontOffset, sideOffset = 1.0, 0.0
+    local frontOffset, sideOffset, heightOffset, headingOffset = 1.0, 0.0, 0.0, 180.1
 
     if senderData.Options.Shared.FrontOffset then
         frontOffset = senderData.Options.Shared.FrontOffset + 0.0
     end
+
     if senderData.Options.Shared.SideOffset then
         sideOffset = senderData.Options.Shared.SideOffset + 0.0
     end
+
+    if senderData.Options.Shared.HeightOffset then
+        heightOffset = senderData.Options.Shared.HeightOffset + 0.0
+    end
+
+    if senderData.Options.Shared.HeadingOffset then
+        headingOffset = senderData.Options.Shared.HeadingOffset + 0.0
+    end
+
     if senderData.Options.Shared.Attach then
         local bone = senderData.Options.Shared.Bone or -1
         local placement = senderData.Options.Shared.Placement
@@ -1234,9 +1262,9 @@ RegisterNetEvent('scully_emotemenu:senderStartSynchronizedEmote', function(targe
             false, true, 1, true)
     end
 
-    local targetCoords = GetOffsetFromEntityInWorldCoords(targetPed, sideOffset, frontOffset, 0.0)
+    local targetCoords = GetOffsetFromEntityInWorldCoords(targetPed, sideOffset, frontOffset, heightOffset)
     local targetHeading = GetEntityHeading(targetPed)
-    SetEntityHeading(cache.ped, targetHeading - 180.1)
+    SetEntityHeading(cache.ped, targetHeading - headingOffset)
     SetEntityCoordsNoOffset(cache.ped, targetCoords.x, targetCoords.y, targetCoords.z, 0)
     EmoteMenu.Play(senderData)
     EmoteMenu.OtherPlayer = target
