@@ -262,49 +262,49 @@ AnimationList.PropEmotes = {
             },
         },
     },
-    {
-        Label = 'Beer Female',
-        Command = 'beerf',
-        Animation = 'idle_a',
-        Dictionary = 'amb@world_human_drinking@beer@female@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'prop_amb_beer_bottle',
-                    Placement = {
-                        vector3(0.000000, -0.000000, 0.050000),
-                        vector3(15.000000, 15.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Beer Female 3',
-        Command = 'beerf3',
-        Animation = 'idle_a',
-        Dictionary = 'amb@world_human_drinking@beer@female@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'prop_amb_beer_bottle',
-                    Placement = {
-                        vector3(0.000000, -0.000000, 0.050000),
-                        vector3(15.000000, 15.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
+    -- {
+    --     Label = 'Beer Female',
+    --     Command = 'beerf',
+    --     Animation = 'idle_a',
+    --     Dictionary = 'amb@world_human_drinking@beer@female@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'prop_amb_beer_bottle',
+    --                 Placement = {
+    --                     vector3(0.000000, -0.000000, 0.050000),
+    --                     vector3(15.000000, 15.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Beer Female 3',
+    --     Command = 'beerf3',
+    --     Animation = 'idle_a',
+    --     Dictionary = 'amb@world_human_drinking@beer@female@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'prop_amb_beer_bottle',
+    --                 Placement = {
+    --                     vector3(0.000000, -0.000000, 0.050000),
+    --                     vector3(15.000000, 15.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
     {
         Label = 'Beg',
         Command = 'beg',
@@ -722,28 +722,28 @@ AnimationList.PropEmotes = {
             },
         },
     },
-    {
-        Label = 'Carry Drink',
-        Command = 'carrydrink',
-        Animation = 'idle_c',
-        Dictionary = 'amb@world_human_drinking@coffee@male@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 57005,
-                    Name = 'bzzz_pizzahut_cup_a',
-                    Placement = {
-                        vector3(0.14, 0.01, -0.04),
-                        vector3(-83.0, 2.0, -36.0),
-                    },
-                },
-            },
-        },
-    },
+    -- {
+    --     Label = 'Carry Drink',
+    --     Command = 'carrydrink',
+    --     Animation = 'idle_c',
+    --     Dictionary = 'amb@world_human_drinking@coffee@male@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 57005,
+    --                 Name = 'bzzz_pizzahut_cup_a',
+    --                 Placement = {
+    --                     vector3(0.14, 0.01, -0.04),
+    --                     vector3(-83.0, 2.0, -36.0),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
     {
         Label = 'Carry Food Bag',
         Command = 'carryfoodbag',
@@ -1580,91 +1580,91 @@ AnimationList.PropEmotes = {
             },
         },
     },
-    {
-        Label = 'Fishing 1',
-        Command = 'fishing1',
-        Animation = 'idle_a',
-        Dictionary = 'amb@world_human_stand_fishing@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-            },
-            Props = {
-                {
-                    Bone = 60309,
-                    Name = 'prop_fishing_rod_01',
-                    Placement = {
-                        vector3(0.000000, 0.000000, 0.000000),
-                        vector3(0.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Fishing 2',
-        Command = 'fishing2',
-        Animation = 'idle_b',
-        Dictionary = 'amb@world_human_stand_fishing@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-            },
-            Props = {
-                {
-                    Bone = 60309,
-                    Name = 'prop_fishing_rod_01',
-                    Placement = {
-                        vector3(0.000000, 0.000000, 0.000000),
-                        vector3(0.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Fishing 3',
-        Command = 'fishing3',
-        Animation = 'idle_c',
-        Dictionary = 'amb@world_human_stand_fishing@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-            },
-            Props = {
-                {
-                    Bone = 60309,
-                    Name = 'prop_fishing_rod_01',
-                    Placement = {
-                        vector3(0.000000, 0.000000, 0.000000),
-                        vector3(0.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Flute',
-        Command = 'flute',
-        Animation = 'ped_a_enter_loop',
-        Dictionary = 'anim@heists@humane_labs@finale@keycards',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 18905,
-                    Name = 'prop_champ_flute',
-                    Placement = {
-                        vector3(0.100000, -0.030000, 0.030000),
-                        vector3(-100.000000, 0.000000, -10.000000),
-                    },
-                },
-            },
-        },
-    },
+    -- {
+    --     Label = 'Fishing 1',
+    --     Command = 'fishing1',
+    --     Animation = 'idle_a',
+    --     Dictionary = 'amb@world_human_stand_fishing@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 60309,
+    --                 Name = 'prop_fishing_rod_01',
+    --                 Placement = {
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Fishing 2',
+    --     Command = 'fishing2',
+    --     Animation = 'idle_b',
+    --     Dictionary = 'amb@world_human_stand_fishing@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 60309,
+    --                 Name = 'prop_fishing_rod_01',
+    --                 Placement = {
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Fishing 3',
+    --     Command = 'fishing3',
+    --     Animation = 'idle_c',
+    --     Dictionary = 'amb@world_human_stand_fishing@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 60309,
+    --                 Name = 'prop_fishing_rod_01',
+    --                 Placement = {
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Flute',
+    --     Command = 'flute',
+    --     Animation = 'ped_a_enter_loop',
+    --     Dictionary = 'anim@heists@humane_labs@finale@keycards',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 18905,
+    --                 Name = 'prop_champ_flute',
+    --                 Placement = {
+    --                     vector3(0.100000, -0.030000, 0.030000),
+    --                     vector3(-100.000000, 0.000000, -10.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
     {
         Label = 'Food Tray',
         Command = 'foodtraya',
@@ -6188,28 +6188,28 @@ AnimationList.PropEmotes = {
             },
         },
     },
-    {
-        Label = 'Soda',
-        Command = 'soda',
-        Animation = 'idle_c',
-        Dictionary = 'amb@world_human_drinking@coffee@male@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'prop_ecola_can',
-                    Placement = {
-                        vector3(0.000000, 0.000000, 0.000000),
-                        vector3(0.000000, 0.000000, 130.000000),
-                    },
-                },
-            },
-        },
-    },
+    -- {
+    --     Label = 'Soda',
+    --     Command = 'soda',
+    --     Animation = 'idle_c',
+    --     Dictionary = 'amb@world_human_drinking@coffee@male@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'prop_ecola_can',
+    --                 Placement = {
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                     vector3(0.000000, 0.000000, 130.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
     {
         Label = 'Steal Stop Sign',
         Command = 'ssign',
@@ -6912,51 +6912,51 @@ AnimationList.PropEmotes = {
     --             },
     --         },
     --     },
-    {
-        Label = 'Watch Stripper 2',
-        Command = 'watchstripper2',
-        Animation = 'base',
-        Dictionary = 'amb@world_human_strip_watch_stand@male_c@base',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 60309,
-                    Name = 'prop_beer_am',
-                    Placement = {
-                        vector3(0.088000, -0.136000, 0.145000),
-                        vector3(-102.962402, 81.709801, -39.273399),
-                    },
-                },
-            },
-        },
-        NSFW = true,
-    },
-    {
-        Label = 'Water',
-        Command = 'water',
-        Animation = 'idle_c',
-        Dictionary = 'amb@world_human_drinking@coffee@male@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'ba_prop_club_water_bottle',
-                    Placement = {
-                        vector3(0.000000, 0.000000, -0.090000),
-                        vector3(0.000000, 0.000000, 130.000000),
-                    },
-                },
-            },
-        },
-    },
+    -- {
+    --     Label = 'Watch Stripper 2',
+    --     Command = 'watchstripper2',
+    --     Animation = 'base',
+    --     Dictionary = 'amb@world_human_strip_watch_stand@male_c@base',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 60309,
+    --                 Name = 'prop_beer_am',
+    --                 Placement = {
+    --                     vector3(0.088000, -0.136000, 0.145000),
+    --                     vector3(-102.962402, 81.709801, -39.273399),
+    --                 },
+    --             },
+    --         },
+    --     },
+    --     NSFW = true,
+    -- },
+    -- {
+    --     Label = 'Water',
+    --     Command = 'water',
+    --     Animation = 'idle_c',
+    --     Dictionary = 'amb@world_human_drinking@coffee@male@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'ba_prop_club_water_bottle',
+    --                 Placement = {
+    --                     vector3(0.000000, 0.000000, -0.090000),
+    --                     vector3(0.000000, 0.000000, 130.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
     --     {
     --         Label = 'Weed Brick',
     --         Command = 'weedbrick',
@@ -7067,158 +7067,158 @@ AnimationList.PropEmotes = {
             },
         },
     },
-    {
-        Label = 'Whiskey',
-        Command = 'whiskey',
-        Animation = 'idle_c',
-        Dictionary = 'amb@world_human_drinking@coffee@male@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'prop_drink_whisky',
-                    Placement = {
-                        vector3(0.010000, -0.010000, -0.060000),
-                        vector3(0.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Whiskey Bottle',
-        Command = 'whiskeyb',
-        Animation = 'idle_a',
-        Dictionary = 'amb@world_human_drinking@beer@male@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'ba_prop_battle_whiskey_bottle_2_s',
-                    Placement = {
-                        vector3(0.000000, 0.000000, 0.050000),
-                        vector3(0.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Whiskey Bottle 2',
-        Command = 'whiskeyb2',
-        Animation = 'idle_a',
-        Dictionary = 'amb@world_human_drinking@beer@male@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'ba_prop_battle_whiskey_bottle_2_s',
-                    Placement = {
-                        vector3(0.000000, 0.000000, 0.050000),
-                        vector3(0.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Whiskey Bottle 3',
-        Command = 'whiskeyb3',
-        Animation = 'idle_a',
-        Dictionary = 'amb@world_human_drinking@beer@male@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'ba_prop_battle_whiskey_bottle_2_s',
-                    Placement = {
-                        vector3(0.000000, 0.000000, 0.050000),
-                        vector3(0.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Wine',
-        Command = 'wine',
-        Animation = 'ped_a_enter_loop',
-        Dictionary = 'anim@heists@humane_labs@finale@keycards',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 18905,
-                    Name = 'prop_drink_redwine',
-                    Placement = {
-                        vector3(0.100000, -0.030000, 0.030000),
-                        vector3(-100.000000, 0.000000, -10.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Wine 2 - Bottle',
-        Command = 'wine2',
-        Animation = 'idle_e',
-        Dictionary = 'amb@world_human_drinking@beer@female@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'prop_wine_rose',
-                    Placement = {
-                        vector3(-0.000000, 0.040000, -0.190000),
-                        vector3(10.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
-    {
-        Label = 'Wine 3 - Bottle',
-        Command = 'wine3',
-        Animation = 'idle_e',
-        Dictionary = 'amb@world_human_drinking@beer@female@idle_a',
-        Options = {
-            Flags = {
-                Loop = true,
-            },
-            Props = {
-                {
-                    Bone = 28422,
-                    Name = 'prop_wine_rose',
-                    Placement = {
-                        vector3(-0.000000, 0.040000, -0.190000),
-                        vector3(10.000000, 0.000000, 0.000000),
-                    },
-                },
-            },
-        },
-    },
+    -- {
+    --     Label = 'Whiskey',
+    --     Command = 'whiskey',
+    --     Animation = 'idle_c',
+    --     Dictionary = 'amb@world_human_drinking@coffee@male@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'prop_drink_whisky',
+    --                 Placement = {
+    --                     vector3(0.010000, -0.010000, -0.060000),
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Whiskey Bottle',
+    --     Command = 'whiskeyb',
+    --     Animation = 'idle_a',
+    --     Dictionary = 'amb@world_human_drinking@beer@male@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'ba_prop_battle_whiskey_bottle_2_s',
+    --                 Placement = {
+    --                     vector3(0.000000, 0.000000, 0.050000),
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Whiskey Bottle 2',
+    --     Command = 'whiskeyb2',
+    --     Animation = 'idle_a',
+    --     Dictionary = 'amb@world_human_drinking@beer@male@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'ba_prop_battle_whiskey_bottle_2_s',
+    --                 Placement = {
+    --                     vector3(0.000000, 0.000000, 0.050000),
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Whiskey Bottle 3',
+    --     Command = 'whiskeyb3',
+    --     Animation = 'idle_a',
+    --     Dictionary = 'amb@world_human_drinking@beer@male@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'ba_prop_battle_whiskey_bottle_2_s',
+    --                 Placement = {
+    --                     vector3(0.000000, 0.000000, 0.050000),
+    --                     vector3(0.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Wine',
+    --     Command = 'wine',
+    --     Animation = 'ped_a_enter_loop',
+    --     Dictionary = 'anim@heists@humane_labs@finale@keycards',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 18905,
+    --                 Name = 'prop_drink_redwine',
+    --                 Placement = {
+    --                     vector3(0.100000, -0.030000, 0.030000),
+    --                     vector3(-100.000000, 0.000000, -10.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Wine 2 - Bottle',
+    --     Command = 'wine2',
+    --     Animation = 'idle_e',
+    --     Dictionary = 'amb@world_human_drinking@beer@female@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'prop_wine_rose',
+    --                 Placement = {
+    --                     vector3(-0.000000, 0.040000, -0.190000),
+    --                     vector3(10.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Wine 3 - Bottle',
+    --     Command = 'wine3',
+    --     Animation = 'idle_e',
+    --     Dictionary = 'amb@world_human_drinking@beer@female@idle_a',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --         },
+    --         Props = {
+    --             {
+    --                 Bone = 28422,
+    --                 Name = 'prop_wine_rose',
+    --                 Placement = {
+    --                     vector3(-0.000000, 0.040000, -0.190000),
+    --                     vector3(10.000000, 0.000000, 0.000000),
+    --                 },
+    --             },
+    --         },
+    --     },
+    -- },
     --     {
     --         Label = 'Walkie Talkie',
     --         Command = 'wt',

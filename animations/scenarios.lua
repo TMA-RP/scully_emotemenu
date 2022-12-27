@@ -189,21 +189,21 @@ AnimationList.Scenarios = {
         Command = 'sitdown5',
         Scenario = 'PROP_HUMAN_SEAT_STRIP_WATCH',
     },
-    {
-        Label = 'Smoke',
-        Command = 'smoke',
-        Scenario = 'WORLD_HUMAN_SMOKING',
-    },
-    {
-        Label = 'Smoke Pot',
-        Command = 'smokepot',
-        Scenario = 'WORLD_HUMAN_DRUG_DEALER',
-    },
-    {
-        Label = 'Smoke Weed',
-        Command = 'smokeweed',
-        Scenario = 'WORLD_HUMAN_SMOKING_POT',
-    },
+    -- {
+    --     Label = 'Smoke',
+    --     Command = 'smoke',
+    --     Scenario = 'WORLD_HUMAN_SMOKING',
+    -- },
+    -- {
+    --     Label = 'Smoke Pot',
+    --     Command = 'smokepot',
+    --     Scenario = 'WORLD_HUMAN_DRUG_DEALER',
+    -- },
+    -- {
+    --     Label = 'Smoke Weed',
+    --     Command = 'smokeweed',
+    --     Scenario = 'WORLD_HUMAN_SMOKING_POT',
+    -- },
     {
         Label = 'Statue',
         Command = 'statue',
@@ -240,4 +240,3 @@ AnimationList.Scenarios = {
         Scenario = 'WORLD_HUMAN_YOGA',
     }
 }
-

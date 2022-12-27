@@ -43,8 +43,8 @@ local mainMenuOptions, emoteMenuOptions, emoteMenuBindsOptions = {
     { label = 'Animations partagées', icon = 'fa-solid fa-people-carry', values = {}, args = 'SynchronizedEmotes',
         close = false },
     { label = 'Danses', icon = 'fa-solid fa-person-running', values = {}, args = 'DanceEmotes', close = false },
-    { label = 'Consumable Emotes', icon = 'fa-solid fa-pizza-slice', values = {}, args = 'ConsumableEmotes',
-        close = false },
+    -- { label = 'Consumable Emotes', icon = 'fa-solid fa-pizza-slice', values = {}, args = 'ConsumableEmotes',
+    --     close = false },
     { label = 'Animal Emotes', icon = 'fa-solid fa-dog', values = {}, args = 'AnimalEmotes', close = false }
 }, {
     -- Emote Bind Menu
@@ -184,7 +184,7 @@ function EmoteMenu.RemoveEmotes(_type)
         'Expressions',
         'Emotes',
         'PropEmotes',
-        'ConsumableEmotes',
+        -- 'ConsumableEmotes',
         'DanceEmotes',
         'SynchronizedEmotes',
         'AnimalEmotes'
@@ -245,7 +245,7 @@ function EmoteMenu.GetEmoteByCommand(name)
         'Expressions',
         'Emotes',
         'PropEmotes',
-        'ConsumableEmotes',
+        -- 'ConsumableEmotes',
         'DanceEmotes',
         'SynchronizedEmotes',
         'AnimalEmotes'
@@ -522,7 +522,7 @@ function EmoteMenu.RemoveUnsupportedEmotes()
         'Expressions',
         'Emotes',
         'PropEmotes',
-        'ConsumableEmotes',
+        -- 'ConsumableEmotes',
         'DanceEmotes',
         'SynchronizedEmotes',
         'AnimalEmotes'
@@ -569,7 +569,7 @@ function EmoteMenu.Search(query)
         'Expressions',
         'Emotes',
         'PropEmotes',
-        'ConsumableEmotes',
+        -- 'ConsumableEmotes',
         'DanceEmotes',
         'SynchronizedEmotes',
         'AnimalEmotes'
@@ -751,13 +751,13 @@ else
     end)
 end
 
-if Config.EnableConsumableEmotes then
-    EmoteMenu.AddEmotesToMenu('ConsumableEmotes', Config.EmotePlayCommands[1])
-else
-    emoteMenuOptions = EmoteMenu.RemoveFromTable(emoteMenuOptions, function(_table, _index)
-        return _table[_index].args ~= 'ConsumableEmotes'
-    end)
-end
+-- if Config.EnableConsumableEmotes then
+--     EmoteMenu.AddEmotesToMenu('ConsumableEmotes', Config.EmotePlayCommands[1])
+-- else
+--     emoteMenuOptions = EmoteMenu.RemoveFromTable(emoteMenuOptions, function(_table, _index)
+--         return _table[_index].args ~= 'ConsumableEmotes'
+--     end)
+-- end
 
 if Config.EnableSynchronizedEmotes then
     EmoteMenu.AddEmotesToMenu('SynchronizedEmotes', Config.EmotePlayCommands[1])

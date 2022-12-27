@@ -1403,11 +1403,12 @@ AnimationList.Emotes = {
     {
         Label = 'Hold holster',
         Command = 'holdholster',
-        Animation = 'intro',
-        Dictionary = 'reaction@intimidation@cop@unarmed',
+        Animation = 'idle',
+        Dictionary = 'move_m@intimidation@cop@unarmed',
         Options = {
             Flags = {
-                Stuck = true,
+                Loop = true,
+                Move = true,
             },
         },
     },
@@ -3054,30 +3055,30 @@ AnimationList.Emotes = {
         Animation = 'wakeup',
         Dictionary = 'random@peyote@rabbit',
     },
-    {
-        Label = 'Radio',
-        Command = 'radio',
-        Animation = 'generic_radio_chatter',
-        Dictionary = 'random@arrests',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-        },
-    },
-    {
-        Label = 'Reaching',
-        Command = 'reaching',
-        Animation = 'idle',
-        Dictionary = 'move_m@intimidation@cop@unarmed',
-        Options = {
-            Flags = {
-                Loop = true,
-                Move = true,
-            },
-        },
-    },
+    -- {
+    --     Label = 'Radio',
+    --     Command = 'radio',
+    --     Animation = 'generic_radio_chatter',
+    --     Dictionary = 'random@arrests',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --     },
+    -- },
+    -- {
+    --     Label = 'Reaching',
+    --     Command = 'reaching',
+    --     Animation = 'idle',
+    --     Dictionary = 'move_m@intimidation@cop@unarmed',
+    --     Options = {
+    --         Flags = {
+    --             Loop = true,
+    --             Move = true,
+    --         },
+    --     },
+    -- },
     {
         Label = 'Relax',
         Command = 'relax',
