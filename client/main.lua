@@ -64,6 +64,7 @@ local mainMenuOptions, emoteMenuOptions, emoteMenuBindsOptions = {
 ---Closes the animation menu
 function EmoteMenu.CloseMenu()
     local currentMenu = lib.getOpenMenu()
+
     if (currentMenu == 'animations_main_menu') or (currentMenu == 'animations_emote_menu') then
         lib.hideMenu()
     end
@@ -74,6 +75,7 @@ exports('CloseMenu', EmoteMenu.CloseMenu)
 ---Toggles the animation menu
 function EmoteMenu.ToggleMenu()
     local currentMenu = lib.getOpenMenu()
+
     if not currentMenu then
         lib.showMenu('animations_main_menu')
     else
@@ -104,6 +106,7 @@ exports('IsLimited', EmoteMenu.IsLimited)
 ---@param keep function
 function EmoteMenu.RemoveFromTable(_table, keep)
     local _index = 1
+
     for i = 1, #_table do
         if keep(_table, i) then
             if (i ~= _index) then
@@ -115,6 +118,7 @@ function EmoteMenu.RemoveFromTable(_table, keep)
             _table[i] = nil
         end
     end
+
     return _table
 end
 
@@ -162,10 +166,12 @@ exports('RegisterEmote', EmoteMenu.RegisterEmote)
 ---@param emote string
 function EmoteMenu.PlayRegisteredEmote(emote)
     local registeredEmote = EmoteMenu.RegisteredEmotes[emote]
+
     if not registeredEmote then
         EmoteMenu.Notify('error', "Animation invalide")
         return
     end
+
     if registeredEmote.Type == 'Walks' then
         EmoteMenu.SetWalk(registeredEmote.Walk)
     else
@@ -189,6 +195,7 @@ function EmoteMenu.RemoveEmotes(_type)
         'SynchronizedEmotes',
         'AnimalEmotes'
     }
+
     for i = 1, #checkMenus do
         AnimationList[checkMenus[i]] = EmoteMenu.RemoveFromTable(AnimationList[checkMenus[i]], function(_table, _index)
             return not _table[_index][_type]
@@ -204,6 +211,7 @@ function EmoteMenu.AddEmotesToMenu(_type, command)
         if mainMenuOptions[option].args == _type then
             for emote = 1, #AnimationList[_type] do
                 local _emote = AnimationList[_type][emote]
+
                 if _emote and _emote.Label and not _emote.Hide then
                     mainMenuOptions[option].values[#mainMenuOptions[option].values + 1] = { label = _emote.Label,
                         description = ('%s %s'):format(command, _emote.Command) }
@@ -216,6 +224,7 @@ function EmoteMenu.AddEmotesToMenu(_type, command)
         if emoteMenuOptions[option].args == _type then
             for emote = 1, #AnimationList[_type] do
                 local _emote = AnimationList[_type][emote]
+
                 if _emote and _emote.Label and not _emote.Hide then
                     emoteMenuOptions[option].values[#emoteMenuOptions[option].values + 1] = { label = _emote.Label,
                         description = ('%s %s'):format(command, _emote.Command) }
@@ -231,6 +240,7 @@ function EmoteMenu.RemoveProps()
     for i = 1, #EmoteMenu.PlayerProps do
         DeleteEntity(EmoteMenu.PlayerProps[i])
     end
+
     EmoteMenu.PlayerProps = {}
 end
 
@@ -250,9 +260,11 @@ function EmoteMenu.GetEmoteByCommand(name)
         'SynchronizedEmotes',
         'AnimalEmotes'
     }
+
     for i = 1, #checkMenus do
         local animType = checkMenus[i]
         local animList = AnimationList[animType]
+
         for emote = 1, #animList do
             if animList[emote] and (animList[emote].Command == name) then
                 _type, _emote = animType, animList[emote]
@@ -260,6 +272,7 @@ function EmoteMenu.GetEmoteByCommand(name)
             end
         end
     end
+
     return _type, _emote
 end
 
@@ -280,11 +293,14 @@ end)
 function EmoteMenu.RequestSynchronizedEmote(senderData)
     local playerPos = GetEntityCoords(cache.ped)
     local targetId, targetPed, targetPos = lib.getClosestPlayer(playerPos, 3.0, false)
+
     if not targetId then
         EmoteMenu.Notify('error', 'Aucune personne autour de vous')
         return
     end
+
     local _type, emote = EmoteMenu.GetEmoteByCommand(senderData.Options.Shared.OtherAnimation)
+
     if _type ~= 'SynchronizedEmotes' then
         EmoteMenu.Notify('error', "Animation invalide")
         return
@@ -297,14 +313,17 @@ end
 ---@param variant number
 function EmoteMenu.PlayByCommand(command, variant)
     local _type, emote = EmoteMenu.GetEmoteByCommand(command)
+
     if not _type or (_type == 'Walks') then
         EmoteMenu.Notify('error', "Animation invalide")
         return
     end
+
     if _type == 'SynchronizedEmotes' then
         EmoteMenu.RequestSynchronizedEmote(emote)
         return
     end
+
     EmoteMenu.Play(emote, variant)
 end
 
@@ -358,6 +377,7 @@ function EmoteMenu.Play(data, variation)
     end
 
     local isValid = lib.requestAnimDict(dictionaryName, 1000)
+
     if not isValid then
         EmoteMenu.Notify('error', "Animation invalide")
         return
@@ -388,8 +408,8 @@ function EmoteMenu.Play(data, variation)
             else
                 EmoteMenu.Keybinds.PlayPtfx:disable(true)
             end
-            TriggerServerEvent('scully_emotemenu:syncPtfx', data.Options.Ptfx.Asset, data.Options.Ptfx.Name,
-                data.Options.Ptfx.Placement, data.Options.Ptfx.Color)
+
+            TriggerServerEvent('scully_emotemenu:syncPtfx', data.Options.Ptfx.Asset, data.Options.Ptfx.Name, data.Options.Ptfx.Placement, data.Options.Ptfx.Bone, data.Options.Ptfx.Color)
         else
             if Config.PtfxKeybind then EmoteMenu.Keybinds.PlayPtfx:disable(true) end
         end
@@ -402,25 +422,32 @@ function EmoteMenu.Play(data, variation)
 
     if data.Options and data.Options.Props then
         local propCount = #data.Options.Props
+
         if propCount > 0 then
             Wait(duration or 0)
+
             for i = 1, propCount do
                 local prop = data.Options.Props[i]
                 local variant = prop.Variant
+
                 if variation then
                     if prop.Variations and prop.Variations[variation] then
                         variant = prop.Variations[variation]
                     end
                 end
+
                 local object = EmoteMenu.AddPropToPlayer(prop.Name, prop.Bone, prop.Placement, variant)
+
                 if (i == 1) and (data.Options.Ptfx and data.Options.Ptfx.AttachToProp) then
                     TriggerServerEvent('scully_emotemenu:syncProp', ObjToNet(object))
                 end
             end
         end
     end
+
     if hasAutomatedPtfx then
         Wait(400)
+
         LocalPlayer.state:set('ptfx', true, true)
     end
 end
@@ -433,13 +460,16 @@ function EmoteMenu.CancelAnimation()
         if IsPedUsingAnyScenario(cache.ped) then ClearPedTasksImmediately(cache.ped) end
         if LocalPlayer.state.ptfx then LocalPlayer.state:set('ptfx', false, true) end
         if Config.PtfxKeybind then EmoteMenu.Keybinds.PlayPtfx:disable(true) end
+
         ClearPedTasks(cache.ped)
         DetachEntity(cache.ped, true, false)
         EmoteMenu.RemoveProps()
+
         EmoteMenu.IsPlayingAnimation = false
         EmoteMenu.CurrentAnimation = nil
         if EmoteMenu.OtherPlayer then
             TriggerServerEvent('scully_emotemenu:cancelSynchronizedEmote', EmoteMenu.OtherPlayer)
+
             EmoteMenu.OtherPlayer = nil
         end
     end
@@ -460,6 +490,7 @@ exports('GetCurrentExpression', EmoteMenu.GetCurrentExpression)
 function EmoteMenu.SetExpression(name)
     SetFacialIdleAnimOverride(cache.ped, name, 0)
     SetResourceKvp('animations_expression', name)
+
     EmoteMenu.CurrentExpression = name
 end
 
@@ -469,6 +500,7 @@ exports('SetExpression', EmoteMenu.SetExpression)
 function EmoteMenu.ResetExpression()
     ClearFacialIdleAnimOverride(cache.ped)
     SetResourceKvp('animations_expression', 'default')
+
     EmoteMenu.CurrentExpression = 'default'
 end
 
@@ -489,6 +521,7 @@ function EmoteMenu.SetWalk(name)
     SetPedMovementClipset(cache.ped, name, 0.2)
     RemoveAnimSet(name)
     SetResourceKvp('animations_walkstyle', name)
+
     EmoteMenu.CurrentWalk = name
 end
 
@@ -498,6 +531,7 @@ exports('SetWalk', EmoteMenu.SetWalk)
 function EmoteMenu.ResetWalk()
     ResetPedMovementClipset(cache.ped)
     SetResourceKvp('animations_walkstyle', 'default')
+
     EmoteMenu.CurrentWalk = 'default'
 end
 
@@ -511,14 +545,20 @@ exports('ResetWalk', EmoteMenu.ResetWalk)
 ---@return number object Entity handle
 function EmoteMenu.AddPropToPlayer(prop, bone, placement, variant)
     local playerPos = GetEntityCoords(cache.ped)
+
     lib.requestModel(prop, 1000)
     local object = CreateObject(joaat(prop), playerPos.x, playerPos.y, playerPos.z + 0.2, true, true, true)
+
     SetEntityCollision(object, false, false)
+
     if variant then SetObjectTextureVariation(object, variant) end
-    AttachEntityToEntity(object, cache.ped, GetPedBoneIndex(cache.ped, bone), placement[1].x, placement[1].y,
-        placement[1].z, placement[2].x, placement[2].y, placement[2].z, true, true, false, true, 1, true)
+
+    AttachEntityToEntity(object, cache.ped, GetPedBoneIndex(cache.ped, bone), placement[1].x, placement[1].y, placement[1].z, placement[2].x, placement[2].y, placement[2].z, true, true, false, true, 1, true)
+    
     EmoteMenu.PlayerProps[#EmoteMenu.PlayerProps + 1] = object
+    
     SetModelAsNoLongerNeeded(prop)
+    
     return object
 end
 
@@ -535,34 +575,38 @@ function EmoteMenu.RemoveUnsupportedEmotes()
         'SynchronizedEmotes',
         'AnimalEmotes'
     }
+
     local DoesAnimDictExist = DoesAnimDictExist
     local IsModelValid = IsModelValid
+
     for i = 1, #checkMenus do
         if AnimationList[checkMenus[i]] then
-            AnimationList[checkMenus[i]] = EmoteMenu.RemoveFromTable(AnimationList[checkMenus[i]],
-                function(_table, _index)
-                    local animation, doesExist = _table[_index], true
-                    if EmoteMenu.GameBuild < 2699 then
-                        if animation.Dictionary and not DoesAnimDictExist(animation.Dictionary) then doesExist = false end
-                        if animation.Options and animation.Options.Props then
-                            local props = animation.Options.Props
-                            local propCount = #props
-                            if propCount > 0 then
-                                for k = 1, propCount do
-                                    if not IsModelValid(joaat(props[k].Name)) then
-                                        doesExist = false
-                                        break
-                                    end
+            AnimationList[checkMenus[i]] = EmoteMenu.RemoveFromTable(AnimationList[checkMenus[i]], function(_table, _index)
+                local animation, doesExist = _table[_index], true
+
+                if EmoteMenu.GameBuild < 2699 then
+                    if animation.Dictionary and not DoesAnimDictExist(animation.Dictionary) then doesExist = false end
+                    if animation.Options and animation.Options.Props then
+                        local props = animation.Options.Props
+                        local propCount = #props
+
+                        if propCount > 0 then
+                            for k = 1, propCount do
+                                if not IsModelValid(joaat(props[k].Name)) then
+                                    doesExist = false
+                                    break
                                 end
                             end
                         end
-                        if not doesExist then
-                            print('^1removed ' ..
-                                animation.Label .. ' as it is not supported on your current game build.')
-                        end
                     end
-                    return doesExist
-                end)
+
+                    if not doesExist then
+                        print('^1removed ' .. animation.Label .. ' as it is not supported on your current game build.')
+                    end
+                end
+
+                return doesExist
+            end)
         end
     end
 end
@@ -571,6 +615,7 @@ end
 ---@param query string
 function EmoteMenu.Search(query)
     Wait(500)
+
     local checkMenus, foundEmotes = {
         'Walks',
         'Scenarios',
@@ -582,12 +627,15 @@ function EmoteMenu.Search(query)
         'SynchronizedEmotes',
         'AnimalEmotes'
     }, {}
+
     for i = 1, #checkMenus do
         local animType = checkMenus[i]
         local animList = AnimationList[animType]
+
         if animList then
             for emote = 1, #animList do
                 local anim = animList[emote]
+
                 if anim and (anim.Command and string.find(string.lower(anim.Command), query)) then
                     anim.CommandHandle = animType == 'Walks' and Config.WalkSetCommands[1] or
                         Config.EmotePlayCommands[1
@@ -598,20 +646,25 @@ function EmoteMenu.Search(query)
             end
         end
     end
+
     if #foundEmotes < 1 then
         EmoteMenu.Notify('error', "Aucune animation trouvée")
         lib.showMenu('animations_main_menu')
         return
     end
+
     local options = {}
+
     for emote = 1, #foundEmotes do
         local _emote = foundEmotes[emote]
+
         if _emote then
             options[#options + 1] = { label = _emote.Label,
                 description = ('%s %s / (%s)'):format(_emote.CommandHandle, _emote.Command, _emote.Type),
                 icon = 'fa-solid fa-person', args = _emote.Command, close = false }
         end
     end
+
     lib.registerMenu({
         id = 'animations_search_menu',
         title = 'Animations',
@@ -622,19 +675,24 @@ function EmoteMenu.Search(query)
         end,
     }, function(selected, scrollIndex, option)
         if EmoteMenu.isActionsLimited then return end
+
         local _type, emote = EmoteMenu.GetEmoteByCommand(option)
+
         if not _type then
             EmoteMenu.Notify('error', "Animation ou style de marche invalide")
             return
         end
+
         if _type == 'Walks' then
             EmoteMenu.SetWalk(emote.Walk)
             return
         end
+
         if _type == 'SynchronizedEmotes' then
             EmoteMenu.RequestSynchronizedEmote(emote)
             return
         end
+
         EmoteMenu.Play(emote)
     end)
     lib.showMenu('animations_search_menu')
@@ -645,9 +703,10 @@ end
 ---@param emote table
 function EmoteMenu.CreateBind(index, emote)
     Wait(500)
-    emoteMenuBindsOptions[index] = { label = emote.Label, description = 'Click to delete the bind',
-        icon = ('fa-solid fa-%s'):format(index), args = index }
-    EmoteMenu.EmoteBinds[index] = { Index = index, Label = emote.Label, Emote = emote.Command }
+
+    emoteMenuBindsOptions[index] = {label = emote.Label, description = 'Click to delete the bind', icon = ('fa-solid fa-%s'):format(index), args = index}
+    EmoteMenu.EmoteBinds[index] = {Index = index, Label = emote.Label, Emote = emote.Command}
+
     SetResourceKvp('animations_binds', json.encode(EmoteMenu.EmoteBinds))
     EmoteMenu.Notify('success', ("%s à été mis en raccourci"):format(emote.Label))
     EmoteMenu.OpenBindMenu()
@@ -657,11 +716,12 @@ end
 ---@param index number
 function EmoteMenu.DeleteBind(index)
     Wait(500)
-    emoteMenuBindsOptions[index] = { label = 'None', description = 'Select to create a new emote bind',
-        icon = 'fa-solid fa-1', args = 'animations_create_bind' }
+
+    emoteMenuBindsOptions[index] = {label = 'None', description = 'Select to create a new emote bind', icon = 'fa-solid fa-1', args = 'animations_create_bind'}
     EmoteMenu.EmoteBinds = EmoteMenu.RemoveFromTable(EmoteMenu.EmoteBinds, function(_table, _index)
         return _table[_index].Index ~= index
     end)
+
     SetResourceKvp('animations_binds', json.encode(EmoteMenu.EmoteBinds))
     EmoteMenu.Notify('error', "Le raccourci a été supprimé")
     EmoteMenu.OpenBindMenu()
@@ -679,24 +739,69 @@ function EmoteMenu.OpenBindMenu()
         end,
     }, function(selected, scrollIndex, option)
         if EmoteMenu.isActionsLimited then return end
+
         if option == 'animations_create_bind' then
-            local query = lib.inputDialog('Create Emote Bind', { 'Emote Command Name' })
+            local query = lib.inputDialog('Create Emote Bind', {'Emote Command Name'})
+
             if not query then return end
+
             local _type, emote = EmoteMenu.GetEmoteByCommand(query[1])
+            
             if not _type or (_type == 'Walks') then
                 EmoteMenu.Notify('error', "Animation invalide")
                 return
             end
+
             if emote.BlockBinding then
                 EmoteMenu.Notify('error', "Vous ne pouvez pas mettre en raccourci cette animation")
                 return
             end
+
             EmoteMenu.CreateBind(selected, emote)
+
             return
         end
+
         EmoteMenu.DeleteBind(option)
     end)
+
     lib.showMenu('animations_emote_binds_menu')
+end
+
+local IsPedFalling = IsPedFalling
+local IsPedJumping = IsPedJumping
+local IsPedUsingActionMode = IsPedUsingActionMode
+local SetPedUsingActionMode = SetPedUsingActionMode
+local SetPedCanPlayAmbientAnims = SetPedCanPlayAmbientAnims
+
+---Crouch loop
+function EmoteMenu.CrouchLoop()
+    CreateThread(function()
+        while EmoteMenu.IsCrouched do
+            Wait(0)
+            
+            if cache.vehicle then 
+                EmoteMenu.IsCrouched = false
+                break
+            end
+
+            if IsPedFalling(cache.ped) then 
+                EmoteMenu.IsCrouched = false
+                break
+            end
+
+            if IsPedJumping(cache.ped) then 
+                EmoteMenu.IsCrouched = false
+                break
+            end
+
+            if IsPedUsingActionMode(cache.ped) == 1 then
+                SetPedUsingActionMode(cache.ped, false, -1, 'DEFAULT_ACTION')
+            end
+
+            SetPedCanPlayAmbientAnims(cache.ped, false)
+        end
+    end)
 end
 
 -- Add / Remove options
@@ -734,6 +839,7 @@ end
 
 if Config.EnableEmoteBinds then
     local binds = EmoteMenu.EmoteBinds
+
     for i = 1, 5 do
         local command = ('emotebind-%s'):format(i)
 
@@ -746,8 +852,10 @@ if Config.EnableEmoteBinds then
 
         exports.ViceRP:RegisterKeyMapping(command, "Animation - Raccourci " .. i, 'keyboard', '')
     end
+
     for i = 1, #binds do
         local bind = binds[i]
+
         if bind then
             emoteMenuBindsOptions[i] = { label = bind.Label, description = 'Clique pour supprimer le raccourci',
                 icon = ('fa-solid fa-%s'):format(i), args = bind.Index }
@@ -792,16 +900,21 @@ lib.registerMenu({
     options = mainMenuOptions,
 }, function(selected, scrollIndex, option)
     if EmoteMenu.isActionsLimited then return end
+
     if option == 'animations_search' then
         local query = lib.inputDialog("Recherche d'animation", { 'Animation' })
         if not query then return end
+
         EmoteMenu.Search(string.lower(query[1]))
+
         return
     elseif option == 'animations_emote_binds_menu' then
         EmoteMenu.OpenBindMenu()
+
         return
     elseif option == 'animations_emote_menu' then
         lib.showMenu('animations_emote_menu')
+
         return
     elseif option == 'cancel' then
         if scrollIndex == 1 then
@@ -815,17 +928,23 @@ lib.registerMenu({
             EmoteMenu.ResetWalk()
             EmoteMenu.ResetExpression()
         end
+
         return
     end
+
     local emote = AnimationList[option][scrollIndex]
+
     if not emote then
         EmoteMenu.Notify('error', "Animation invalide")
         return
     end
+
     if option == 'Walks' then
         EmoteMenu.SetWalk(emote.Walk)
+
         return
     end
+
     EmoteMenu.Play(emote)
 end)
 
@@ -840,15 +959,20 @@ lib.registerMenu({
     end,
 }, function(selected, scrollIndex, option)
     if EmoteMenu.isActionsLimited then return end
+
     local emote = AnimationList[option][scrollIndex]
+
     if not emote then
         EmoteMenu.Notify('error', "Animation invalide")
         return
     end
+
     if option == 'SynchronizedEmotes' then
         EmoteMenu.RequestSynchronizedEmote(emote)
+
         return
     end
+
     EmoteMenu.Play(emote)
 end)
 
@@ -856,6 +980,7 @@ end)
 for i = 1, #Config.MenuOpenCommands do
     RegisterCommand(Config.MenuOpenCommands[i], function(source, args, rawCommand)
         if EmoteMenu.isActionsLimited then return end
+
         EmoteMenu.ToggleMenu()
     end, false)
 end
@@ -863,28 +988,39 @@ end
 for i = 1, #Config.EmotePlayCommands do
     RegisterCommand(Config.EmotePlayCommands[i], function(source, args, rawCommand)
         if EmoteMenu.isActionsLimited then return end
+
         if not args[1] then
             EmoteMenu.Notify('error', "Vous devez fournir un code d'animation")
             return
         end
+
         if args[1]:lower() == 'c' then
             EmoteMenu.CancelAnimation()
+
             return
         end
+
         local _type, emote = EmoteMenu.GetEmoteByCommand(args[1])
+
         if not _type or (_type == 'Walks') then
             EmoteMenu.Notify('error', "Animation invalide")
             return
         end
+
         if _type == 'SynchronizedEmotes' then
             EmoteMenu.RequestSynchronizedEmote(emote)
+
             return
         end
+
         local variant = nil
+
         if args[2] then
             local index = tonumber(args[2])
+
             if index then variant = index end
         end
+
         EmoteMenu.Play(emote, variant)
     end, false)
 end
@@ -892,19 +1028,25 @@ end
 for i = 1, #Config.WalkSetCommands do
     RegisterCommand(Config.WalkSetCommands[i], function(source, args, rawCommand)
         if EmoteMenu.isActionsLimited then return end
+
         if not args[1] then
             EmoteMenu.Notify('error', "Vous devez fournir un code de style de marche")
             return
         end
+
         if args[1]:lower() == 'c' then
             EmoteMenu.ResetWalk()
+
             return
         end
+
         local _type, emote = EmoteMenu.GetEmoteByCommand(args[1])
+
         if not _type or (_type ~= 'Walks') then
             EmoteMenu.Notify('error', "Style de marche invalide")
             return
         end
+
         EmoteMenu.SetWalk(emote.Walk)
     end, false)
 end
@@ -937,10 +1079,17 @@ if Config.RagdollKeybind ~= '' then
         description = 'Animation - Tomber au sol / Se relever',
         defaultKey = Config.RagdollKeybind,
         onPressed = function(key)
-            if EmoteMenu.isActionsLimited then return end
+            if EmoteMenu.isActionsLimited or EmoteMenu.IsPlayingAnimation then return end
+
             EmoteMenu.IsRagdoll = not EmoteMenu.IsRagdoll
+
             while EmoteMenu.IsRagdoll do
                 Wait(0)
+                if EmoteMenu.isActionsLimited then
+                    EmoteMenu.IsRagdoll = false
+                    break
+                end
+
                 if IsPedOnFoot(cache.ped) then
                     SetPedToRagdoll(cache.ped, 1000, 1000, 0, 0, 0, 0)
                 end
@@ -956,6 +1105,7 @@ if Config.HandsUpKey ~= '' then
         defaultKey = Config.HandsUpKey,
         onPressed = function(key)
             if EmoteMenu.isActionsLimited then return end
+
             lib.requestAnimDict('random@mugging3', 1000)
             TaskPlayAnim(cache.ped, 'random@mugging3', 'handsup_standing_base', 8.0, 8.0, -1, 50, 0, false, false, false)
         end,
@@ -971,13 +1121,18 @@ if Config.CrouchKey ~= '' then
         description = "Animation - S'accroupir",
         defaultKey = Config.CrouchKey,
         onPressed = function(key)
+            DisableControlAction(0, 36, true)
+            
             if EmoteMenu.isActionsLimited or cache.vehicle then return end
+
             EmoteMenu.IsCrouched = not EmoteMenu.IsCrouched
+
             if EmoteMenu.IsCrouched then
                 lib.requestAnimSet('move_ped_crouched', 1000)
                 SetPedMovementClipset(cache.ped, 'move_ped_crouched', 1.0)
                 SetPedWeaponMovementClipset(cache.ped, 'move_ped_crouched', 1.0)
                 SetPedStrafeClipset(cache.ped, 'move_ped_crouched_strafing', 1.0)
+                EmoteMenu.CrouchLoop()
             else
                 if EmoteMenu.CurrentWalk == 'default' then
                     ResetPedMovementClipset(cache.ped, 1.0)
@@ -985,6 +1140,7 @@ if Config.CrouchKey ~= '' then
                     lib.requestAnimSet(EmoteMenu.CurrentWalk, 1000)
                     SetPedMovementClipset(cache.ped, EmoteMenu.CurrentWalk, 1.0)
                 end
+
                 ResetPedWeaponMovementClipset(cache.ped)
                 ResetPedStrafeClipset(cache.ped)
             end
@@ -1011,9 +1167,12 @@ if Config.PointKey ~= '' then
         defaultKey = Config.PointKey,
         onPressed = function(key)
             if EmoteMenu.isActionsLimited then return end
+
             EmoteMenu.IsPointing = not EmoteMenu.IsPointing
+
             if EmoteMenu.IsPointing then
                 if cache.vehicle then return end
+
                 lib.requestAnimDict('anim@mp_point', 1000)
                 SetPedCurrentWeaponVisible(cache.ped, 0, true, true, true)
                 SetPedConfigFlag(cache.ped, 36, 1)
@@ -1023,21 +1182,25 @@ if Config.PointKey ~= '' then
                     while EmoteMenu.IsPointing do
                         Wait(0)
                         local camPitch = GetGameplayCamRelativePitch()
+
                         if camPitch < -70.0 then
                             camPitch = -70.0
                         elseif camPitch > 42.0 then
                             camPitch = 42.0
                         end
+
                         camPitch = (camPitch + 70.0) / 112.0
 
                         local camHeading = GetGameplayCamRelativeHeading()
                         local cosCamHeading = Cos(camHeading)
                         local sinCamHeading = Sin(camHeading)
+
                         if camHeading < -180.0 then
                             camHeading = -180.0
                         elseif camHeading > 180.0 then
                             camHeading = 180.0
                         end
+
                         camHeading = (camHeading + 180.0) / 360.0
 
                         local coords = GetOffsetFromEntityInWorldCoords(cache.ped,
@@ -1047,6 +1210,7 @@ if Config.PointKey ~= '' then
                             coords.z + 0.2, 0.4
                             , 95, cache.ped, 7)
                         local _, blocked = GetShapeTestResult(ray)
+
                         SetTaskMoveNetworkSignalFloat(cache.ped, 'Pitch', camPitch)
                         SetTaskMoveNetworkSignalFloat(cache.ped, 'Heading', camHeading * -1.0 + 1.0)
                         SetTaskMoveNetworkSignalBool(cache.ped, 'isBlocked', blocked)
@@ -1056,8 +1220,10 @@ if Config.PointKey ~= '' then
                 end)
             else
                 RequestTaskMoveNetworkStateTransition(cache.ped, 'Stop')
+
                 if not IsPedInjured(cache.ped) then ClearPedSecondaryTask(cache.ped) end
                 if not cache.vehicle then SetPedCurrentWeaponVisible(cache.ped, 1, true, true, true) end
+
                 SetPedConfigFlag(cache.ped, 36, false)
                 ClearPedSecondaryTask(cache.ped)
             end
@@ -1073,6 +1239,7 @@ if Config.PtfxKeybind then
         defaultKey = Config.PtfxKeybind,
         onPressed = function(key)
             LocalPlayer.state:set('ptfx', true, true)
+
             if not EmoteMenu.PtfxCanHold then
                 LocalPlayer.state:set('ptfx', false, true)
             end
@@ -1099,9 +1266,8 @@ AddStateBagChangeHandler('ptfx', nil, function(bagName, key, value, _unused, rep
     local stateBag = Player(serverId).state
 
     if value then
-        local asset, name, offset, rot, scale, color, propNet, entityTarget = stateBag.ptfxAsset, stateBag.ptfxName,
-            stateBag.ptfxOffset, stateBag.ptfxRot, stateBag.ptfxScale or 1, stateBag.ptfxColor, stateBag.ptfxPropNet,
-            playerPed
+        local asset, name, offset, rot, scale, color, propNet, entityTarget = stateBag.ptfxAsset, stateBag.ptfxName, stateBag.ptfxOffset, stateBag.ptfxRot, stateBag.ptfxScale or 1, stateBag.ptfxColor, stateBag.ptfxPropNet, playerPed
+        local boneIndex = stateBag.ptfxBone and GetPedBoneIndex(playerPed, stateBag.ptfxBone) or GetEntityBoneIndexByName(name, "VFX")
 
         if propNet then
             local propObj = NetToObj(propNet)
@@ -1110,12 +1276,12 @@ AddStateBagChangeHandler('ptfx', nil, function(bagName, key, value, _unused, rep
 
         lib.requestNamedPtfxAsset(asset, 1000)
         UseParticleFxAsset(asset)
-        EmoteMenu.PlayerParticles[serverId] = StartParticleFxLoopedOnEntityBone(name, entityTarget, offset.x, offset.y,
-            offset.z, rot.x, rot.y, rot.z, GetEntityBoneIndexByName(name, 'VFX'), scale + 0.0, false, false, false)
+        EmoteMenu.PlayerParticles[serverId] = StartParticleFxLoopedOnEntityBone(name, entityTarget, offset.x, offset.y, offset.z, rot.x, rot.y, rot.z, boneIndex, scale + 0.0, false, false, false)
 
         if color then
             if color[1] and type(color[1]) == 'table' then
                 local randomIndex = math.random(1, #color)
+
                 color = color[randomIndex]
             end
 
@@ -1184,6 +1350,7 @@ local IsControlJustPressed = IsControlJustPressed
 RegisterNetEvent('scully_emotemenu:synchronizedEmoteRequest', function(sender, senderData, targetData)
     PlaySoundFrontend(-1, 'NAV', 'HUD_AMMO_SHOP_SOUNDSET', 0)
     EmoteMenu.ShowHelpAlert('fa-solid fa-question', ('[Y] - Accept, [N] - Deny: %s'):format(targetData.Label))
+
     while true do
         Wait(0)
         if IsControlJustPressed(0, 246) then
@@ -1199,6 +1366,7 @@ end)
 
 RegisterNetEvent('scully_emotemenu:targetStartSynchronizedEmote', function(sender, senderData, targetData)
     local isValid = lib.requestAnimDict(targetData.Dictionary, 1000)
+
     if not isValid then
         EmoteMenu.Notify('error', "Animation invalide")
         return
@@ -1210,20 +1378,22 @@ RegisterNetEvent('scully_emotemenu:targetStartSynchronizedEmote', function(sende
         local bone = targetData.Options.Shared.Bone or -1
         local placement = targetData.Options.Shared.Placement
         local xP, yP, zP, xR, yR, zR = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+
         if placement then
             xP, yP, zP, xR, yR, zR = placement[1].x, placement[1].y, placement[1].z, placement[2].x, placement[2].y,
                 placement[2].z
         end
-        AttachEntityToEntity(cache.ped, senderPed, GetPedBoneIndex(senderPed, bone), xP, yP, zP, xR, yR, zR, false, false
-            ,
-            false, true, 1, true)
+
+        AttachEntityToEntity(cache.ped, senderPed, GetPedBoneIndex(senderPed, bone), xP, yP, zP, xR, yR, zR, false, false, false, true, 1, true)
     end
+
     EmoteMenu.Play(targetData)
     EmoteMenu.OtherPlayer = sender
 end)
 
 RegisterNetEvent('scully_emotemenu:senderStartSynchronizedEmote', function(target, senderData)
     local isValid = lib.requestAnimDict(senderData.Dictionary, 1000)
+
     if not isValid then
         EmoteMenu.Notify('error', "Animation invalide")
         return
@@ -1264,15 +1434,18 @@ RegisterNetEvent('scully_emotemenu:senderStartSynchronizedEmote', function(targe
 
     local targetCoords = GetOffsetFromEntityInWorldCoords(targetPed, sideOffset, frontOffset, heightOffset)
     local targetHeading = GetEntityHeading(targetPed)
+
     SetEntityHeading(cache.ped, targetHeading - headingOffset)
     SetEntityCoordsNoOffset(cache.ped, targetCoords.x, targetCoords.y, targetCoords.z, 0)
     EmoteMenu.Play(senderData)
+
     EmoteMenu.OtherPlayer = target
 end)
 
 RegisterNetEvent('scully_emotemenu:cancelSynchronizedEmote', function()
     EmoteMenu.Notify('error', "L'animation a été annulée")
     EmoteMenu.OtherPlayer = nil
+
     EmoteMenu.CancelAnimation()
 end)
 
@@ -1282,6 +1455,7 @@ lib.onCache('ped', function(playerPed)
         if EmoteMenu.CurrentExpression ~= 'default' then
             EmoteMenu.SetExpression(EmoteMenu.CurrentExpression)
         end
+
         if EmoteMenu.CurrentWalk ~= 'default' then
             EmoteMenu.SetWalk(EmoteMenu.CurrentWalk)
         end
@@ -1293,6 +1467,7 @@ AddEventHandler('playerSpawned', function()
     if EmoteMenu.CurrentExpression ~= 'default' then
         EmoteMenu.SetExpression(EmoteMenu.CurrentExpression)
     end
+
     if EmoteMenu.CurrentWalk ~= 'default' then
         EmoteMenu.SetWalk(EmoteMenu.CurrentWalk)
     end
@@ -1301,6 +1476,7 @@ end)
 AddEventHandler('entityDamaged', function(entity)
     if cache.ped == entity then
         if not IsPedFatallyInjured(cache.ped) then return end
+        
         EmoteMenu.CancelAnimation()
     end
 end)

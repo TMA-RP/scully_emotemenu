@@ -120,6 +120,16 @@ AnimationList.Walks = {
         Walk = 'move_m@intimidation@cop@unarmed',
     },
     {
+        Label = 'Coward',
+        Command = 'coward',
+        Walk = 'move_m@coward',
+    },
+    {
+        Label = 'Dave',
+        Command = 'dave',
+        Walk = 'move_characters@dave_n',
+    },
+    {
         Label = 'Default Female',
         Command = 'defaultfemale',
         Walk = 'move_f@multiplayer',
@@ -230,6 +240,11 @@ AnimationList.Walks = {
         Walk = 'move_m@flee@c',
     },
     {
+        Label = 'Floyd',
+        Command = 'floyd',
+        Walk = 'move_characters@floyd',
+    },
+    {
         Label = 'Franklin',
         Command = 'franklin',
         Walk = 'move_p_m_one',
@@ -258,6 +273,11 @@ AnimationList.Walks = {
         Label = 'Gangster 5',
         Command = 'gangster5',
         Walk = 'move_m@gangster@var_i',
+    },
+    {
+        Label = 'Gangster 6',
+        Command = 'gangster6',
+        Walk = 'move_f@gangster@ng',
     },
     {
         Label = 'Generic',
@@ -340,6 +360,11 @@ AnimationList.Walks = {
         Walk = 'move_m@hurry@c',
     },
     {
+        Label = 'Hurry 4',
+        Command = 'hurry4',
+        Walk = 'move_f@hurry@b',
+    },
+    {
         Label = 'Injured',
         Command = 'injured',
         Walk = 'move_m@injured',
@@ -370,6 +395,11 @@ AnimationList.Walks = {
         Walk = 'move_p_m_zero_slow',
     },
     {
+        Label = 'Jimmy',
+        Command = 'jimmy',
+        Walk = 'move_characters@jimmy',
+    },
+    {
         Label = 'Jog',
         Command = 'jog',
         Walk = 'move_m@jog@',
@@ -378,6 +408,11 @@ AnimationList.Walks = {
         Label = 'Lamar',
         Command = 'lamar',
         Walk = 'anim_group_move_lemar_alley',
+    },
+    {
+        Label = 'Lamar 2',
+        Command = 'lamar2',
+        Walk = 'move_characters@lamar',
     },
     {
         Label = 'Lester',
@@ -415,6 +450,11 @@ AnimationList.Walks = {
         Walk = 'move_characters@jimmy@nervous@',
     },
     {
+        Label = 'Patricia',
+        Command = 'patricia',
+        Walk = 'move_characters@patricia',
+    },
+    {
         Label = 'Posh',
         Command = 'posh',
         Walk = 'move_m@posh@',
@@ -428,6 +468,11 @@ AnimationList.Walks = {
         Label = 'Quick',
         Command = 'quick',
         Walk = 'move_m@quick',
+    },
+    {
+        Label = 'Ron',
+        Command = 'ron',
+        Walk = 'move_characters@ron',
     },
     {
         Label = 'Runner',
@@ -495,6 +540,11 @@ AnimationList.Walks = {
         Walk = 'move_m@swagger',
     },
     {
+        Label = 'Swagger 2',
+        Command = 'swagger2',
+        Walk = 'move_m@swagger@b',
+    },
+    {
         Label = 'Tough',
         Command = 'tough',
         Walk = 'move_m@tough_guy@',
@@ -513,6 +563,11 @@ AnimationList.Walks = {
         Label = 'Toolbelt 2',
         Command = 'toolbelt2',
         Walk = 'move_f@tool_belt@a',
+    },
+    {
+        Label = 'Tracy',
+        Command = 'tracy',
+        Walk = 'move_characters@tracey',
     },
     {
         Label = 'Trash',

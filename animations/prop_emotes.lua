@@ -390,6 +390,24 @@ AnimationList.PropEmotes = {
         },
     },
     {
+        Label = 'Bong 2',
+        Command = 'bong2',
+        Animation = 'bong_stage3',
+        Dictionary = 'anim@safehouse@bong',
+        Options = {
+            Props = {
+                {
+                    Bone = 18905,
+                    Name = 'xm3_prop_xm3_bong_01a',
+                    Placement = {
+                        vector3(0.100000, -0.250000, 0.000000),
+                        vector3(95.000000, 190.000000, 180.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
         Label = 'Bongo Drums',
         Command = 'bongos',
         Animation = 'base',
@@ -2979,9 +2997,9 @@ AnimationList.PropEmotes = {
                 AttachToProp = true,
                 CanHold = true,
                 Color = {
-                    { R = 255, G = 0, B = 0, A = 1.0 },
-                    { R = 0, G = 255, B = 0, A = 1.0 },
-                    { R = 0, G = 0, B = 255, A = 1.0 }
+                    { R = 255, G = 0,   B = 0,   A = 1.0 },
+                    { R = 0,   G = 255, B = 0,   A = 1.0 },
+                    { R = 0,   G = 0,   B = 255, A = 1.0 }
                 },
                 Name = 'scr_indep_firework_trail_spawn',
                 Placement = {
@@ -3017,13 +3035,13 @@ AnimationList.PropEmotes = {
                 Asset = 'scr_rcpaparazzo1',
                 AttachToProp = true,
                 Color = {
-                    { R = 255, G = 0, B = 0, A = 1.0 },
-                    { R = 0, G = 255, B = 0, A = 1.0 },
-                    { R = 0, G = 0, B = 255, A = 1.0 },
-                    { R = 177, G = 5, B = 245, A = 1.0 },
-                    { R = 251, G = 3, B = 255, A = 1.0 },
-                    { R = 2, G = 238, B = 250, A = 1.0 },
-                    { R = 252, G = 248, B = 0, A = 1.0 },
+                    { R = 255, G = 0,   B = 0,   A = 1.0 },
+                    { R = 0,   G = 255, B = 0,   A = 1.0 },
+                    { R = 0,   G = 0,   B = 255, A = 1.0 },
+                    { R = 177, G = 5,   B = 245, A = 1.0 },
+                    { R = 251, G = 3,   B = 255, A = 1.0 },
+                    { R = 2,   G = 238, B = 250, A = 1.0 },
+                    { R = 252, G = 248, B = 0,   A = 1.0 },
                     { R = 245, G = 245, B = 245, A = 1.0 }
                 },
                 Name = 'scr_mich4_firework_trailburst',
@@ -3058,174 +3076,155 @@ AnimationList.PropEmotes = {
         },
         NSFW = true,
     },
-    --     {
-    --         Label = 'ID Card 1',
-    --         Command = 'idcard',
-    --         Animation = 'player_one_dual-8',
-    --         Dictionary = 'paper_1_rcm_alt1-8',
-    --         Options = {
-    --             Flags = {
-    --                 Move = true,
-    --             },
-    --             Props = {
-    --                 {
-    --                     Bone = 57005,
-    --                     Name = 'prop_franklin_dl',
-    --                     Placement = {
-    --                         vector3(0.100000, 0.020000, -0.030000),
-    --                         vector3(-90.000000, 170.000000, 78.999001),
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --     },
-    --     {
-    --         Label = 'ID Card 2 - FIB',
-    --         Command = 'idcardb',
-    --         Animation = 'player_one_dual-8',
-    --         Dictionary = 'paper_1_rcm_alt1-8',
-    --         Options = {
-    --             Flags = {
-    --                 Move = true,
-    --             },
-    --             Props = {
-    --                 {
-    --                     Bone = 28422,
-    --                     Name = 'prop_fib_badge',
-    --                     Placement = {
-    --                         vector3(0.060000, 0.021000, -0.040000),
-    --                         vector3(-90.000000, -180.000000, 78.999001),
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --     },
-    --     {
-    --         Label = 'ID Card 3',
-    --         Command = 'idcardc',
-    --         Animation = 'player_one_dual-8',
-    --         Dictionary = 'paper_1_rcm_alt1-8',
-    --         Options = {
-    --             Flags = {
-    --                 Move = true,
-    --             },
-    --             Props = {
-    --                 {
-    --                     Bone = 28422,
-    --                     Name = 'prop_michael_sec_id',
-    --                     Placement = {
-    --                         vector3(0.100000, 0.020000, -0.030000),
-    --                         vector3(-90.000000, -180.000000, 78.999001),
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --     },
-    --     {
-    --         Label = 'ID Card 4',
-    --         Command = 'idcardd',
-    --         Animation = 'player_one_dual-8',
-    --         Dictionary = 'paper_1_rcm_alt1-8',
-    --         Options = {
-    --             Flags = {
-    --                 Move = true,
-    --             },
-    --             Props = {
-    --                 {
-    --                     Bone = 28422,
-    --                     Name = 'prop_trev_sec_id',
-    --                     Placement = {
-    --                         vector3(0.100000, 0.020000, -0.030000),
-    --                         vector3(-90.000000, -180.000000, 78.999001),
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --     },
-    --     {
-    --         Label = 'ID Card 5',
-    --         Command = 'idcarde',
-    --         Animation = 'player_one_dual-8',
-    --         Dictionary = 'paper_1_rcm_alt1-8',
-    --         Options = {
-    --             Flags = {
-    --                 Move = true,
-    --             },
-    --             Props = {
-    --                 {
-    --                     Bone = 28422,
-    --                     Name = 'p_ld_id_card_002',
-    --                     Placement = {
-    --                         vector3(0.100000, 0.020000, -0.030000),
-    --                         vector3(-90.000000, -180.000000, 78.999001),
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --     },
-    --     {
-    --         Label = 'ID Card 6',
-    --         Command = 'idcardf',
-    --         Animation = 'player_one_dual-8',
-    --         Dictionary = 'paper_1_rcm_alt1-8',
-    --         Options = {
-    --             Flags = {
-    --                 Move = true,
-    --             },
-    --             Props = {
-    --                 {
-    --                     Bone = 28422,
-    --                     Name = 'prop_cs_r_business_card',
-    --                     Placement = {
-    --                         vector3(0.100000, 0.020000, -0.030000),
-    --                         vector3(-90.000000, -180.000000, 78.999001),
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --     },
-    --     {
-    --         Label = 'ID Card 7',
-    --         Command = 'idcardg',
-    --         Animation = 'player_one_dual-8',
-    --         Dictionary = 'paper_1_rcm_alt1-8',
-    --         Options = {
-    --             Flags = {
-    --                 Move = true,
-    --             },
-    --             Props = {
-    --                 {
-    --                     Bone = 28422,
-    --                     Name = 'prop_michael_sec_id',
-    --                     Placement = {
-    --                         vector3(0.100000, 0.020000, -0.030000),
-    --                         vector3(-90.000000, -180.000000, 78.999001),
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --     },
-    --     {
-    --         Label = 'ID Card 8',
-    --         Command = 'idcardh',
-    --         Animation = 'player_one_dual-8',
-    --         Dictionary = 'paper_1_rcm_alt1-8',
-    --         Options = {
-    --             Flags = {
-    --                 Move = true,
-    --             },
-    --             Props = {
-    --                 {
-    --                     Bone = 28422,
-    --                     Name = 'prop_lspd_badge',
-    --                     Placement = {
-    --                         vector3(0.080000, -0.012000, -0.060000),
-    --                         vector3(-90.000000, 180.000000, 69.989998),
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --     },
+    {
+        Label = 'ID Card - Drivers License',
+        Command = 'idcard',
+        Animation = 'player_one_dual-8',
+        Dictionary = 'paper_1_rcm_alt1-8',
+        Options = {
+            Flags = {
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 57005,
+                    Name = 'prop_franklin_dl',
+                    Placement = {
+                        vector3(0.100000, 0.020000, -0.030000),
+                        vector3(-90.000000, 170.000000, 78.999001),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'ID Card 2 - FIB',
+        Command = 'idcard2',
+        Animation = 'player_one_dual-8',
+        Dictionary = 'paper_1_rcm_alt1-8',
+        Options = {
+            Flags = {
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'prop_fib_badge',
+                    Placement = {
+                        vector3(0.060000, 0.021000, -0.040000),
+                        vector3(-90.000000, -180.000000, 78.999001),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'ID Card 3 - Humane Labs',
+        Command = 'idcard3',
+        Animation = 'player_one_dual-8',
+        Dictionary = 'paper_1_rcm_alt1-8',
+        Options = {
+            Flags = {
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'p_ld_id_card_002',
+                    Placement = {
+                        vector3(0.100000, 0.020000, -0.030000),
+                        vector3(-90.000000, -180.000000, 78.999001),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'ID Card 4 - Gruppe Sechs',
+        Command = 'idcard4',
+        Animation = 'player_one_dual-8',
+        Dictionary = 'paper_1_rcm_alt1-8',
+        Options = {
+            Flags = {
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'prop_michael_sec_id',
+                    Placement = {
+                        vector3(0.100000, 0.020000, -0.030000),
+                        vector3(-90.000000, -180.000000, 78.999001),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'ID Card 5 - LSPD Badge',
+        Command = 'idcard5',
+        Animation = 'player_one_dual-8',
+        Dictionary = 'paper_1_rcm_alt1-8',
+        Options = {
+            Flags = {
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'prop_lspd_badge',
+                    Placement = {
+                        vector3(0.080000, -0.012000, -0.060000),
+                        vector3(-90.000000, 180.000000, 69.989998),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'ID Card 6 - Drivers License',
+        Command = 'idcard6',
+        Animation = 'player_one_dual-8',
+        Dictionary = 'paper_1_rcm_alt1-8',
+        Options = {
+            Flags = {
+                Move = true,
+                Stuck = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'bkr_prop_fakeid_singledriverl',
+                    Placement = {
+                        vector3(0.070000, 0.026000, -0.032000),
+                        vector3(-10.868300, -177.849899, 23.637699),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'ID Card 7 - Passport',
+        Command = 'idcard7',
+        Animation = 'static',
+        Dictionary = 'amb@code_human_wander_clipboard@male@base',
+        Options = {
+            Flags = {
+                Move = true,
+                Stuck = true,
+            },
+            Props = {
+                {
+                    Bone = 60309,
+                    Name = 'bkr_prop_fakeid_openpassport',
+                    Placement = {
+                        vector3(-0.023000, 0.033000, -0.060000),
+                        vector3(-80.708298, 90.866997, 41.481400),
+                    },
+                },
+            },
+        },
+    },
     {
         Label = 'JerkOff! Female',
         Command = 'jerkf',
@@ -4135,6 +4134,75 @@ AnimationList.PropEmotes = {
         SocialMovement = true,
     },
     {
+        Label = 'Puke',
+        Command = 'puke',
+        Animation = 'trv_puking_leadout',
+        Dictionary = 'missheistpaletoscore1leadinout',
+        Options = {
+            Flags = {
+                Move = true,
+            },
+            Ptfx = {
+                Asset = 'scr_paletoscore',
+                AttachToProp = false,
+                CanHold = true,
+                Name = 'scr_trev_puke',
+                Placement = {
+                    vector3(0.000000, 0.000000, 0.000000),
+                    vector3(0.000000, 0.000000, 0.000000),
+                    1.0,
+                },
+                Wait = 200,
+            },
+        },
+    },
+    {
+        Label = 'Puke 2',
+        Command = 'puke2',
+        Animation = 'idle',
+        Dictionary = 'anim@scripted@ulp_missions@injured_agent@',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+            Ptfx = {
+                Asset = 'scr_paletoscore',
+                AttachToProp = false,
+                CanHold = true,
+                Name = 'scr_trev_puke',
+                Placement = {
+                    vector3(0.000000, 0.000000, 0.000000),
+                    vector3(0.000000, 0.000000, 0.000000),
+                    1.0,
+                },
+                Wait = 200,
+            },
+        },
+    },
+    {
+        Label = 'Puke 3',
+        Command = 'puke3',
+        Animation = 'vomit',
+        Dictionary = 'anim@scripted@freemode@throw_up_toilet@male@',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+            Ptfx = {
+                Asset = 'scr_paletoscore',
+                AttachToProp = false,
+                CanHold = true,
+                Name = 'scr_trev_puke',
+                Placement = {
+                    vector3(0.000000, 0.000000, 0.000000),
+                    vector3(0.000000, 0.000000, 0.000000),
+                    1.0,
+                },
+                Wait = 200,
+            },
+        },
+    },
+    {
         Label = 'SMS',
         Command = 'phone',
         Animation = 'cellphone_text_read_base',
@@ -4154,6 +4222,187 @@ AnimationList.PropEmotes = {
                     },
                     Variant = 0,
                     Variations = { 0, 1, 2, 3, 4, 5, 6, 7 },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Papers',
+        Command = 'papers',
+        Animation = 'static',
+        Dictionary = 'missheistdocksprep1hold_cellphone',
+        Options = {
+            Flags = {
+                Loop = true,
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 18905,
+                    Name = 'xm3_prop_xm3_papers_01a',
+                    Placement = {
+                        vector3(0.130000, 0.000000, 0.040000),
+                        vector3(-110.000000, 0.000000, 0.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Patrol Car',
+        Command = 'patrolcar',
+        Animation = 'base',
+        Dictionary = 'amb@incar@male@patrol@torch@base',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'prop_cs_police_torch_02',
+                    Placement = {
+                        vector3(0.000000, -0.010000, -0.010000),
+                        vector3(0.000000, 0.000000, 100.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Patrol Car 2',
+        Command = 'patrolcar2',
+        Animation = 'idle_d',
+        Dictionary = 'amb@incar@male@patrol@torch@idle_b',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'prop_cs_police_torch_02',
+                    Placement = {
+                        vector3(0.000000, -0.010000, -0.010000),
+                        vector3(0.000000, 0.000000, 100.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Patrol Car 3',
+        Command = 'patrolcar3',
+        Animation = 'idle_a',
+        Dictionary = 'amb@incar@male@patrol@torch@idle_a',
+        Options = {
+            Flags = {
+                Loop = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'prop_cs_police_torch_02',
+                    Placement = {
+                        vector3(0.000000, -0.010000, -0.010000),
+                        vector3(0.000000, 0.000000, 100.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Patrol - On Foot',
+        Command = 'patrolf',
+        Animation = 'base',
+        Dictionary = 'amb@world_human_security_shine_torch@male@base',
+        Options = {
+            Flags = {
+                Loop = true,
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 60309,
+                    Name = 'prop_cs_police_torch_02',
+                    Placement = {
+                        vector3(0.000000, 0.000000, 0.000000),
+                        vector3(0.000000, 0.000000, 80.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Patrol - On Foot 2',
+        Command = 'patrolf2',
+        Animation = 'idle_e',
+        Dictionary = 'amb@world_human_security_shine_torch@male@idle_b',
+        Options = {
+            Flags = {
+                Loop = true,
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 60309,
+                    Name = 'prop_cs_police_torch_02',
+                    Placement = {
+                        vector3(0.000000, 0.000000, 0.000000),
+                        vector3(0.000000, 0.000000, 80.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Patrol - On Foot 3',
+        Command = 'patrolf3',
+        Animation = 'idle_a',
+        Dictionary = 'amb@world_human_security_shine_torch@male@idle_a',
+        Options = {
+            Flags = {
+                Loop = true,
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 60309,
+                    Name = 'prop_cs_police_torch_02',
+                    Placement = {
+                        vector3(0.000000, 0.000000, 0.000000),
+                        vector3(0.000000, 0.000000, 80.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Patrol - On Foot 4',
+        Command = 'patrolf4',
+        Animation = 'base',
+        Dictionary = 'amb@incar@male@patrol@torch@base',
+        Options = {
+            Flags = {
+                Loop = true,
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'prop_cs_police_torch_02',
+                    Placement = {
+                        vector3(0.000000, -0.001000, 0.000000),
+                        vector3(0.000000, 0.000000, 90.000000),
+                    },
+                },
+                {
+                    Bone = 60309,
+                    Name = 'prop_cs_hand_radio',
+                    Placement = {
+                        vector3(0.056000, 0.047000, 0.011000),
+                        vector3(-43.827332, 164.674698, -7.556900),
+                    },
                 },
             },
         },
@@ -5828,15 +6077,18 @@ AnimationList.PropEmotes = {
                         vector3(0.070000, -0.020000, -0.210000),
                         vector3(0.000000, 0.000000, 0.000000),
                     },
+                }
+            },
+            Ptfx = {
+                Asset = 'scr_amb_chop',
+                AttachToProp = true,
+                Name = 'ent_anim_dog_poo',
+                Placement = {
+                    vector3(0.000000, 0.000000, -0.100000),
+                    vector3(0.000000, 0.000000, 0.000000),
+                    1.0,
                 },
-                {
-                    Bone = 0,
-                    Name = 'prop_big_shit_01',
-                    Placement = {
-                        vector3(-0.010000, 0.060000, -0.155000),
-                        vector3(101.301521, 7.351221, -29.266579),
-                    },
-                },
+                Wait = 200,
             },
         },
         NSFW = true,
@@ -6782,6 +7034,50 @@ AnimationList.PropEmotes = {
                 {
                     Bone = 28422,
                     Name = 'imp_prop_tool_box_01a',
+                    Placement = {
+                        vector3(0.370000, 0.020000, 0.000000),
+                        vector3(90.000000, 0.000000, -90.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Toolbox 3',
+        Command = 'toolbox3',
+        Animation = 'idle',
+        Dictionary = 'move_weapon@jerrycan@generic',
+        Options = {
+            Flags = {
+                Loop = true,
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'xm3_prop_xm3_tool_box_01a',
+                    Placement = {
+                        vector3(0.370000, 0.020000, 0.000000),
+                        vector3(90.000000, 0.000000, -90.000000),
+                    },
+                },
+            },
+        },
+    },
+    {
+        Label = 'Toolbox 4',
+        Command = 'toolbox4',
+        Animation = 'idle',
+        Dictionary = 'move_weapon@jerrycan@generic',
+        Options = {
+            Flags = {
+                Loop = true,
+                Move = true,
+            },
+            Props = {
+                {
+                    Bone = 28422,
+                    Name = 'xm3_prop_xm3_tool_box_02a',
                     Placement = {
                         vector3(0.370000, 0.020000, 0.000000),
                         vector3(90.000000, 0.000000, -90.000000),
