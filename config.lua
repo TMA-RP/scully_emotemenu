@@ -8,7 +8,7 @@ Config = {
     -- You can disable the emote preview feature here.
     EnableEmotePreview = true,
     -- You can disable the emote position selector on emotes with the Placement flag here.
-    EnableEmotePlacement = true,
+    EnableEmotePlacement = false,
     -- You can disable the emote binds option here.
     EnableEmoteBinds = true,
     -- Block players from using weapons while doing an emote.

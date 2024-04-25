@@ -629,26 +629,63 @@ end
 
 exports('playEmote', playEmote)
 
+local cloneThreadStarted = false
+
+local function startCloneThread()
+    if cloneThreadStarted then return end
+
+    cloneThreadStarted = true
+
+    CreateThread(function()
+        while cloneThreadStarted do
+            if clone and DoesEntityExist(clone) then
+                local clonePos = GetOffsetFromEntityInWorldCoords(cache.ped, 1.0, 0.0, -1.0)
+                local cloneHeading = GetEntityHeading(cache.ped)
+                SetEntityCoords(clone, clonePos.x, clonePos.y, clonePos.z, false, false, false, false)
+                SetEntityHeading(clone, cloneHeading)
+            end
+            Wait(0)
+        end
+
+        if clone and DoesEntityExist(clone) then
+            for i = 1, #cloneProps do
+                DeleteEntity(cloneProps[i])
+            end
+
+            cloneProps = {}
+            DeleteEntity(clone)
+            clone = nil
+        end
+    end)
+end
+
 ---Play an animation using a clone
 ---@param data table
 function initCloneEmote(data)
-    if DoesEntityExist(clone --[[@as number]]) then return end
+    if clone and DoesEntityExist(clone --[[@as number]]) then
+        ClearPedTasksImmediately(clone)
+        for i = 1, #cloneProps do
+            DeleteEntity(cloneProps[i])
+        end
+
+        cloneProps = {}
+    end
 
     if cache.vehicle then
         notify('error', lang.no_animations_in_vehicle)
         return
     end
+    if not clone then
+        local clonePos = GetOffsetFromEntityInWorldCoords(cache.ped, 1.0, 0.0, -1.0)
+        local cloneHeading = GetEntityHeading(cache.ped)
 
-    local clonePos = GetOffsetFromEntityInWorldCoords(cache.ped, 0.0, 4.5, 0.0)
-    local cloneHeading = GetEntityHeading(cache.ped) + 180
+        clone = ClonePed(cache.ped, false, false, true)
 
-    clone = ClonePed(cache.ped, false, false, true)
-
-    SetEntityCoords(clone, clonePos.x, clonePos.y, clonePos.z, false, false, false, false)
-    SetEntityHeading(clone, cloneHeading)
-    SetEntityAlpha(clone, 200, false)
-
-    Wait(200)
+        SetEntityCoords(clone, clonePos.x, clonePos.y, clonePos.z, false, false, false, false)
+        SetEntityHeading(clone, cloneHeading)
+        SetEntityAlpha(clone, 200, false)
+        Wait(200)
+    end
 
     local hasAutomatedPtfx, dictionaryName, animationName = false, data.Dictionary, data.Animation
 
@@ -742,8 +779,9 @@ function initCloneEmote(data)
                         local prop = propList[i]
 
                         lib.requestModel(prop.hash, 1000)
-
-                        local object = CreateObject(prop.hash, clonePos.x, clonePos.y, clonePos.z, false, false, false)
+                        local currentCoords = GetEntityCoords(clone)
+                        local object = CreateObject(prop.hash, currentCoords.x, currentCoords.y, currentCoords.z, false, false, false)
+                        SetEntityAlpha(object, 200, false)
                         SetEntityCollision(object, false, false)
                         AttachEntityToEntity(object, clone, GetPedBoneIndex(clone, prop.bone), prop.placement[1].x, prop.placement[1].y, prop.placement[1].z, prop.placement[2].x, prop.placement[2].y, prop.placement[2].z, true, true, false, true, 1, true)
 
@@ -755,22 +793,7 @@ function initCloneEmote(data)
             end
         end
     end
-
-    local endTimer = ((cloneDuration or 0) + 1) * 1000
-
-    if endTimer > 5000 then
-        endTimer = 5000
-    end
-
-    Wait(endTimer)
-
-    for i = 1, #cloneProps do
-        DeleteEntity(cloneProps[i])
-    end
-
-    cloneProps = {}
-
-    DeleteEntity(clone)
+    startCloneThread()
 end
 
 ---Cancel the animation you're currently playing
@@ -1040,7 +1063,7 @@ function startPlacementThread(data)
                 heading -= 5
 
                 if heading < 0 then heading = 360.0 end
-            elseif IsDisabledControlPressed(0, 27) then
+            elseif IsDisabledControlPressed(0, 172) then
                 offsetZ += 0.01
 
                 if offsetZ > 1.0 then offsetZ = 1.0 end
@@ -1158,6 +1181,7 @@ function searchMenu(query)
                 if anim and anim.Command and string.find(string.lower(anim.Command), query) then
                     anim.CommandHandle = animType == 'Walks' and Config.WalkSetCommands[1] or Config.EmotePlayCommands[1]
                     anim.Type = animType
+                    anim.Index = emote
                     foundEmotes[#foundEmotes + 1] = anim
                 end
             end
@@ -1176,7 +1200,7 @@ function searchMenu(query)
         local _emote = foundEmotes[emote]
 
         if _emote then
-            options[#options + 1] = { label = _emote.Label, description = ('%s %s / (%s)'):format(_emote.CommandHandle, _emote.Command, _emote.Type), icon = 'fa-solid fa-person', args = _emote.Command, close = false }
+            options[#options + 1] = { label = _emote.Label, description = ('%s %s / (%s)'):format(_emote.CommandHandle, _emote.Command, _emote.Type), icon = 'fa-solid fa-person', args = { command = _emote.Command, type = _emote.Type, index = _emote.Index }, close = false }
         end
     end
 
@@ -1185,13 +1209,23 @@ function searchMenu(query)
         title = 'Animation Menu',
         position = Config.MenuPosition,
         options = options,
+        onSelected = function(selected, secondary, args)
+            if isActionsLimited then return end
+            if AnimationList[args.type] and AnimationList[args.type][args.index] and args.type ~= "Walks" and args.type ~= "Expressions" and args.type ~= "Scenarios" then
+                local emote = AnimationList[args.type][args.index]
+                initCloneEmote(emote)
+            else
+                cloneThreadStarted = false
+            end
+        end,
         onClose = function()
             lib.showMenu('animations_main_menu')
+            cloneThreadStarted = false
         end,
     }, function(_, _, option)
         if isActionsLimited then return end
 
-        local _type, emote = getEmoteByCommand(option)
+        local _type, emote = getEmoteByCommand(option.command)
 
         if not _type then
             notify('error', 'That isn\'t a valid emote or walk style')
@@ -1209,6 +1243,7 @@ function searchMenu(query)
         end
 
         playEmote(emote --[[@as table]])
+        cloneThreadStarted = false
     end)
     lib.showMenu('animations_search_menu')
 end
@@ -1543,8 +1578,21 @@ lib.registerMenu({
     title = lang.emote_menu,
     position = Config.MenuPosition,
     options = emoteMenuOptions,
+    onSideScroll = function(selected, scrollIndex, option)
+        if isActionsLimited then return end
+
+        local emote = AnimationList[option][scrollIndex]
+
+        if not emote then
+            notify('error', lang.not_valid_emote)
+
+            return
+        end
+        initCloneEmote(emote)
+    end,
     onClose = function()
         lib.showMenu('animations_main_menu')
+        cloneThreadStarted = false
     end,
 }, function(selected, scrollIndex, option)
     if isActionsLimited then return end
@@ -1559,15 +1607,9 @@ lib.registerMenu({
 
     if option == 'SynchronizedEmotes' then
         requestSynchronizedEmote(emote)
-
         return
     end
-
-    if IsControlPressed(0, 38) and Config.EnableEmotePreview then
-        initCloneEmote(emote)
-        return
-    end
-
+    cloneThreadStarted = false
     playEmote(emote)
 end)
 
