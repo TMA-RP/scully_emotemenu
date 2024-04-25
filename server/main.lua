@@ -29,12 +29,9 @@ local function CheckMenuVersion()
             return
         end
 
-        lib.print.info(('Current Version: %s'):format(currentVersion))
-        lib.print.info(('Latest Version: %s'):format(text))
-
-        if text == currentVersion then
-            lib.print.info('You are running the latest version.')
-        else
+        if text ~= currentVersion then
+            lib.print.info(('Current Version: %s'):format(currentVersion))
+            lib.print.info(('Latest Version: %s'):format(text))
             lib.print.error(('You are currently running an outdated version, please update to version %s'):format(text))
         end
     end)

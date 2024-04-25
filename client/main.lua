@@ -9,28 +9,28 @@ local pedTypes = require('data.ped_types')
 -- Menu Options
 local mainMenuOptions, emoteMenuOptions, emoteMenuBindsOptions = {
     -- Main Menu
-    {label = lang.search, description = lang.search_for_animation, icon = 'fa-solid fa-magnifying-glass', args = 'animations_search'},
-    {label = lang.keybinds, description = lang.create_delete_binds, icon = 'fa-solid fa-keyboard', args = 'animations_emote_binds_menu'},
-    {label = lang.emote_menu, description = lang.open_emote_menu, icon = 'fa-solid fa-person', args = 'animations_emote_menu'},
-    {label = lang.walking_styles, icon = 'fa-solid fa-person-walking', values = {}, args = 'Walks', close = false},
-    {label = lang.scenarios, icon = 'fa-solid fa-person-walking-with-cane', values = {}, args = 'Scenarios', close = false},
-    {label = lang.facial_expressions, icon = 'fa-solid fa-face-angry', values = {}, args = 'Expressions', close = false},
-    {label = lang.cancel, values = {{label = lang.emote, description = lang.cancel_your_emote}, {label = lang.walk_style, description = lang.reset_walk_style}, {label = lang.expression, description = lang.reset_your_expression}, {label = lang.all, description = lang.cancel_reset_everything}}, icon = 'fa-solid fa-ban', args = 'cancel', close = false}
+    { label = lang.search,             description = lang.search_for_animation,                                                                                                                                                                                                                                              icon = 'fa-solid fa-magnifying-glass', args = 'animations_search' },
+    { label = lang.keybinds,           description = lang.create_delete_binds,                                                                                                                                                                                                                                               icon = 'fa-solid fa-keyboard',         args = 'animations_emote_binds_menu' },
+    { label = lang.emote_menu,         description = lang.open_emote_menu,                                                                                                                                                                                                                                                   icon = 'fa-solid fa-person',           args = 'animations_emote_menu' },
+    { label = lang.walking_styles,     icon = 'fa-solid fa-person-walking',                                                                                                                                                                                                                                                  values = {},                           args = 'Walks',                      close = false },
+    { label = lang.scenarios,          icon = 'fa-solid fa-person-walking-with-cane',                                                                                                                                                                                                                                        values = {},                           args = 'Scenarios',                  close = false },
+    { label = lang.facial_expressions, icon = 'fa-solid fa-face-angry',                                                                                                                                                                                                                                                      values = {},                           args = 'Expressions',                close = false },
+    { label = lang.cancel,             values = { { label = lang.emote, description = lang.cancel_your_emote }, { label = lang.walk_style, description = lang.reset_walk_style }, { label = lang.expression, description = lang.reset_your_expression }, { label = lang.all, description = lang.cancel_reset_everything } }, icon = 'fa-solid fa-ban',              args = 'cancel',                     close = false }
 }, {
     -- Emote Menu
-    {label = lang.emotes, icon = 'fa-solid fa-person-walking', values = {}, args = 'Emotes', close = false},
-    {label = lang.prop_emotes, icon = 'fa-solid fa-person-hiking', values = {}, args = 'PropEmotes', close = false},
-    {label = lang.consumable_emotes, icon = 'fa-solid fa-pizza-slice', values = {}, args = 'ConsumableEmotes', close = false},
-    {label = lang.dance_emotes, icon = 'fa-solid fa-person-running', values = {}, args = 'DanceEmotes', close = false},
-    {label = lang.synced_emotes, icon = 'fa-solid fa-people-carry', values = {}, args = 'SynchronizedEmotes', close = false},
-    {label = lang.animal_emotes, icon = 'fa-solid fa-dog', values = {}, args = 'AnimalEmotes', close = false}
+    { label = lang.emotes,            icon = 'fa-solid fa-person-walking', values = {}, args = 'Emotes',             close = false },
+    { label = lang.prop_emotes,       icon = 'fa-solid fa-person-hiking',  values = {}, args = 'PropEmotes',         close = false },
+    { label = lang.consumable_emotes, icon = 'fa-solid fa-pizza-slice',    values = {}, args = 'ConsumableEmotes',   close = false },
+    { label = lang.dance_emotes,      icon = 'fa-solid fa-person-running', values = {}, args = 'DanceEmotes',        close = false },
+    { label = lang.synced_emotes,     icon = 'fa-solid fa-people-carry',   values = {}, args = 'SynchronizedEmotes', close = false },
+    { label = lang.animal_emotes,     icon = 'fa-solid fa-dog',            values = {}, args = 'AnimalEmotes',       close = false }
 }, {
     -- Emote Bind Menu
-    {label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-1', args = 'animations_create_bind'},
-    {label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-2', args = 'animations_create_bind'},
-    {label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-3', args = 'animations_create_bind'},
-    {label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-4', args = 'animations_create_bind'},
-    {label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-5', args = 'animations_create_bind'}
+    { label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-1', args = 'animations_create_bind' },
+    { label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-2', args = 'animations_create_bind' },
+    { label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-3', args = 'animations_create_bind' },
+    { label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-4', args = 'animations_create_bind' },
+    { label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-5', args = 'animations_create_bind' }
 }
 
 local custom = require('custom_emotes')
@@ -62,6 +62,7 @@ function closeMenu()
 
     lib.hideMenu()
 end
+
 exports('closeMenu', closeMenu)
 
 ---Toggles the animation menu
@@ -74,6 +75,7 @@ function toggleMenu()
         closeMenu()
     end
 end
+
 exports('toggleMenu', toggleMenu)
 
 ---Opens list of emotes
@@ -101,9 +103,10 @@ function listEmotes(_type)
         centered = true,
         size = 'lg',
         overflow = true,
-        labels = {cancel = '', confirm = lang.close}
+        labels = { cancel = '', confirm = lang.close }
     })
 end
+
 exports('listEmotes', listEmotes)
 
 ---Toggle player limitations
@@ -111,6 +114,7 @@ exports('listEmotes', listEmotes)
 function setLimitation(limited)
     isActionsLimited = limited
 end
+
 exports('setLimitation', setLimitation)
 
 ---Check if the player is currently limited
@@ -118,6 +122,7 @@ exports('setLimitation', setLimitation)
 function isLimited()
     return isActionsLimited
 end
+
 exports('isLimited', isLimited)
 
 ---Remove multiple entries from a table
@@ -157,6 +162,7 @@ function notify(_type, message)
         iconColor = _type == 'error' and '#D30000' or '#2ea4f7'
     })
 end
+
 exports('customNotifyFn', function(fn) if fn then notify = fn end end)
 
 ---Displays a text UI
@@ -173,6 +179,7 @@ function showHelpAlert(icon, text)
         }
     })
 end
+
 exports('customHelpAlertFn', function(fn) if fn then showHelpAlert = fn end end)
 
 ---Register emotes to be used within external resources
@@ -180,6 +187,7 @@ exports('customHelpAlertFn', function(fn) if fn then showHelpAlert = fn end end)
 function registerEmote(emote)
     registeredEmotes[emote.Name] = emote
 end
+
 exports('registerEmote', registerEmote)
 
 ---Play a registered emote
@@ -198,6 +206,7 @@ function playRegisteredEmote(emote)
         playEmote(registeredEmote, registeredEmote.Variant)
     end
 end
+
 exports('playRegisteredEmote', playRegisteredEmote)
 
 ---Remove emotes from the menu
@@ -232,7 +241,7 @@ function addEmotesToMenu(_type, command)
                 local _emote = AnimationList[_type][emote]
 
                 if _emote and _emote.Label and not _emote.Hide then
-                    mainMenuOptions[option].values[#mainMenuOptions[option].values + 1] = {label = _emote.Label, description = ('%s %s'):format(command, _emote.Command)}
+                    mainMenuOptions[option].values[#mainMenuOptions[option].values + 1] = { label = _emote.Label, description = ('%s %s'):format(command, _emote.Command) }
                 end
             end
 
@@ -246,7 +255,7 @@ function addEmotesToMenu(_type, command)
                 local _emote = AnimationList[_type][emote]
 
                 if _emote and _emote.Label and not _emote.Hide then
-                    emoteMenuOptions[option].values[#emoteMenuOptions[option].values + 1] = {label = _emote.Label, description = ('%s %s'):format(command, _emote.Command)}
+                    emoteMenuOptions[option].values[#emoteMenuOptions[option].values + 1] = { label = _emote.Label, description = ('%s %s'):format(command, _emote.Command) }
                 end
             end
 
@@ -261,13 +270,13 @@ end
 ---@param icon string
 ---@param cancel RadialItem
 function addEmotesToRadial(_type, id, icon, cancel)
-    local options = {{
+    local options = { {
         label = lang.emote_list,
         icon = 'list',
         onSelect = function()
             listEmotes(_type)
         end
-    }, cancel}
+    }, cancel }
 
     for i = 1, #AnimationList[_type] do
         local emote = AnimationList[_type][i]
@@ -332,6 +341,7 @@ end
 function isInEmote()
     return isPlayingAnimation
 end
+
 exports('isInEmote', isInEmote)
 
 ---Get the last emote a player used
@@ -339,6 +349,7 @@ exports('isInEmote', isInEmote)
 function getLastEmote()
     return lastEmote, lastVariant
 end
+
 exports('getLastEmote', getLastEmote)
 
 function requestSynchronizedEmote(senderData)
@@ -378,6 +389,7 @@ function playEmoteByCommand(command, variant)
 
     playEmote(emote --[[@as table]], variant)
 end
+
 exports('playEmoteByCommand', playEmoteByCommand)
 
 ---Play an animation
@@ -614,6 +626,7 @@ function playEmote(data, variation)
         LocalPlayer.state:set('ptfx', true, true)
     end
 end
+
 exports('playEmote', playEmote)
 
 ---Play an animation using a clone
@@ -785,6 +798,7 @@ function cancelEmote(skipReset)
         end
     end
 end
+
 exports('cancelEmote', cancelEmote)
 
 ---Get the players current expression
@@ -792,6 +806,7 @@ exports('cancelEmote', cancelEmote)
 function getCurrentExpression()
     return currentExpression
 end
+
 exports('getCurrentExpression', getCurrentExpression)
 
 ---Set the players current expression
@@ -803,6 +818,7 @@ function setExpression(name)
 
     currentExpression = name
 end
+
 exports('setExpression', setExpression)
 
 ---Reset the players expression
@@ -812,6 +828,7 @@ function resetExpression()
 
     currentExpression = 'default'
 end
+
 exports('resetExpression', resetExpression)
 
 ---Get the players current walk style
@@ -819,11 +836,15 @@ exports('resetExpression', resetExpression)
 function getCurrentWalk()
     return currentWalk
 end
+
 exports('getCurrentWalk', getCurrentWalk)
 
 ---Set the players current walk style
 ---@param name string
 function setWalk(name)
+    if name == "default" then
+        name = LocalPlayer.state.sex == 0 and "move_m@multiplayer" or "move_f@multiplayer"
+    end
     lib.requestAnimSet(name, 1000)
     SetPedMovementClipset(cache.ped, name, 0.2)
     RemoveAnimSet(name)
@@ -831,6 +852,7 @@ function setWalk(name)
 
     currentWalk = name
 end
+
 exports('setWalk', setWalk)
 
 ---Reset the players walk style
@@ -840,6 +862,7 @@ function resetWalk()
 
     currentWalk = 'default'
 end
+
 exports('resetWalk', resetWalk)
 
 ---Finish the animation placement
@@ -1153,7 +1176,7 @@ function searchMenu(query)
         local _emote = foundEmotes[emote]
 
         if _emote then
-            options[#options + 1] = {label = _emote.Label, description = ('%s %s / (%s)'):format(_emote.CommandHandle, _emote.Command, _emote.Type), icon = 'fa-solid fa-person', args = _emote.Command, close = false}
+            options[#options + 1] = { label = _emote.Label, description = ('%s %s / (%s)'):format(_emote.CommandHandle, _emote.Command, _emote.Type), icon = 'fa-solid fa-person', args = _emote.Command, close = false }
         end
     end
 
@@ -1196,8 +1219,8 @@ end
 function createBind(index, emote)
     Wait(500)
 
-    emoteMenuBindsOptions[index] = {label = emote.Label, description = lang.delete_bind, icon = ('fa-solid fa-%s'):format(index), args = index}
-    emoteBinds[index] = {Index = index, Label = emote.Label, Emote = emote.Command}
+    emoteMenuBindsOptions[index] = { label = emote.Label, description = lang.delete_bind, icon = ('fa-solid fa-%s'):format(index), args = index }
+    emoteBinds[index] = { Index = index, Label = emote.Label, Emote = emote.Command }
 
     SetResourceKvp('animations_binds', json.encode(emoteBinds))
     notify('success', (lang.bind_created):format(emote.Label))
@@ -1209,7 +1232,7 @@ end
 function deleteBind(index)
     Wait(500)
 
-    emoteMenuBindsOptions[index] = {label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-1', args = 'animations_create_bind'}
+    emoteMenuBindsOptions[index] = { label = lang.none, description = lang.new_bind, icon = 'fa-solid fa-1', args = 'animations_create_bind' }
     emoteBinds = removeFromTable(emoteBinds, function(_table, _index)
         return _table[_index].Index ~= index
     end)
@@ -1233,7 +1256,7 @@ function openBindMenu()
         if isActionsLimited then return end
 
         if option == 'animations_create_bind' then
-            local query = lib.inputDialog(lang.create_emote_bind, {lang.emote_command_name})
+            local query = lib.inputDialog(lang.create_emote_bind, { lang.emote_command_name })
 
             if not query then return end
 
@@ -1306,7 +1329,7 @@ end
 
 -- Disable the stance controls
 function disableStanceControls()
-    lib.disableControls:Add({36, 26})
+    lib.disableControls:Add({ 36, 26 })
 
     CreateThread(function()
         while IsDisabledControlPressed(0, 36) or IsDisabledControlPressed(0, 26) do
@@ -1315,7 +1338,7 @@ function disableStanceControls()
             lib.disableControls()
         end
 
-        lib.disableControls:Remove({36, 26})
+        lib.disableControls:Remove({ 36, 26 })
     end)
 end
 
@@ -1372,12 +1395,12 @@ if Config.EnableRadialMenu then
         }
     })
 
-    lib.addRadialItem({{
+    lib.addRadialItem({ {
         id = 'scully_emotemenu:open',
         label = lang.emotes,
         icon = 'person-walking',
         menu = 'scully_emotemenu:main'
-    }})
+    } })
 
     addEmotesToRadial('Walks', 'scully_emotemenu:walks', 'person-walking', {
         label = lang.cancel,
@@ -1415,14 +1438,14 @@ if Config.EnableEmoteBinds then
             end
         end, false)
 
-        RegisterKeyMapping(command, command, 'keyboard', '')
+        exports.TMA:RegisterKeyMapping(command, 'Animations - Raccourci ' .. i, 'keyboard', '')
     end
 
     for i = 1, #binds do
         local bind = binds[i]
 
         if bind then
-            emoteMenuBindsOptions[i] = {label = bind.Label, description = lang.delete_bind, icon = ('fa-solid fa-%s'):format(i), args = bind.Index}
+            emoteMenuBindsOptions[i] = { label = bind.Label, description = lang.delete_bind, icon = ('fa-solid fa-%s'):format(i), args = bind.Index }
         end
     end
 else
@@ -1466,7 +1489,7 @@ lib.registerMenu({
     if isActionsLimited then return end
 
     if option == 'animations_search' then
-        local query = lib.inputDialog(lang.emote_search, {lang.emote})
+        local query = lib.inputDialog(lang.emote_search, { lang.emote })
 
         if not query then return end
 
@@ -1647,14 +1670,14 @@ end
 -- Keybinds
 if Config.MenuKeybind ~= '' then
     if #Config.MenuOpenCommands > 0 then
-        RegisterKeyMapping(Config.MenuOpenCommands[1], lang.open_emote_menu, 'keyboard', Config.MenuKeybind)
+        exports.TMA:RegisterKeyMapping(Config.MenuOpenCommands[1], 'Menu - Animations', 'keyboard', Config.MenuKeybind)
     end
 end
 
 if Config.CancelEmoteKey ~= '' then
     keybinds.CancelKey = lib.addKeybind({
         name = 'ecancel',
-        description = lang.cancel_your_emote,
+        description = "Animations - " .. lang.cancel_your_emote,
         defaultKey = Config.CancelEmoteKey,
         onPressed = function()
             cancelEmote(false)
@@ -1668,7 +1691,7 @@ if Config.RagdollKeybind ~= '' then
 
     keybinds.Ragdoll = lib.addKeybind({
         name = 'ragdoll',
-        description = lang.ragdoll_character,
+        description = "Animations - " .. lang.ragdoll_character,
         defaultKey = Config.RagdollKeybind,
         onPressed = function()
             if isActionsLimited or isPlayingAnimation then return end
@@ -1683,7 +1706,11 @@ if Config.RagdollKeybind ~= '' then
                 end
 
                 if IsPedOnFoot(cache.ped) then
-                    SetPedToRagdoll(cache.ped, 1000, 1000, 0, false, false, false)
+                    if not IsPedRagdoll(cache.ped) then
+                        SetPedToRagdoll(cache.ped, 1000, 1000, 0, false, false, false)
+                        Wait(500)
+                    end
+                    ResetPedRagdollTimer(cache.ped)
                 end
             end
         end
@@ -1693,7 +1720,7 @@ end
 if Config.HandsUpKey ~= '' then
     keybinds.HandsUp = lib.addKeybind({
         name = 'handsup',
-        description = lang.hands_up,
+        description = "Animations - " .. lang.hands_up,
         defaultKey = Config.HandsUpKey,
         onPressed = function()
             if isActionsLimited then return end
@@ -1712,7 +1739,7 @@ if Config.HandsUpKey ~= '' then
         end,
         onReleased = function()
             if isActionsLimited then return end
-            
+
             ClearPedTasks(cache.ped)
         end
     })
@@ -1723,7 +1750,7 @@ if Config.StanceKey ~= '' then
 
     keybinds.Stance = lib.addKeybind({
         name = 'stance',
-        description = lang.stance,
+        description = "Animations - " .. lang.stance,
         defaultKey = Config.StanceKey,
         onPressed = function()
             if isActionsLimited or cache.vehicle then return end
@@ -1764,7 +1791,7 @@ if Config.PointKey ~= '' then
 
     keybinds.Point = lib.addKeybind({
         name = 'point',
-        description = lang.point,
+        description = "Animations - " .. lang.point,
         defaultKey = Config.PointKey,
         onPressed = function()
             if isActionsLimited then return end
@@ -1831,7 +1858,7 @@ if Config.PtfxKeybind then
     keybinds.PlayPtfx = lib.addKeybind({
         name = 'playptfx',
         disabled = true,
-        description = lang.play_ptfx,
+        description = "Animations - " .. lang.play_ptfx,
         defaultKey = Config.PtfxKeybind,
         onPressed = function()
             LocalPlayer.state:set('ptfx', true, true)
