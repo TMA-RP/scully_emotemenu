@@ -681,6 +681,8 @@ function initCloneEmote(data)
 
         clone = ClonePed(cache.ped, false, false, true)
 
+        SetBlockingOfNonTemporaryEvents(clone, true)
+        SetEntityCollision(clone, false, false)
         SetEntityCoords(clone, clonePos.x, clonePos.y, clonePos.z, false, false, false, false)
         SetEntityHeading(clone, cloneHeading)
         SetEntityAlpha(clone, 200, false)
