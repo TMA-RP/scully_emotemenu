@@ -11,6 +11,7 @@ version '1.9.9f'
 dependencies {
     '/server:5848',
     '/onesync',
+    'ox_lib'
 }
 
 files {
