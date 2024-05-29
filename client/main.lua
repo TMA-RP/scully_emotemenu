@@ -1962,6 +1962,9 @@ end)
 ---@diagnostic disable-next-line: param-type-mismatch
 AddStateBagChangeHandler('stance', nil, function(_, _, value)
     if value == 0 then -- Regular
+        if LocalPlayer.state.stance == 2 then
+            returnStance = false
+        end
         if currentWalk == 'default' then
             ResetPedMovementClipset(cache.ped, 1.0)
         else
