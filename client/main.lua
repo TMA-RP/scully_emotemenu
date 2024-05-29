@@ -1366,18 +1366,18 @@ end
 
 -- Disable the stance controls
 function disableStanceControls()
-    lib.disableControls:Add({ 36, 26 })
-
     CreateThread(function()
-        while IsDisabledControlPressed(0, 36) or IsDisabledControlPressed(0, 26) do
+        while true do
+            DisableControlAction(0, 36, true)
+            if not cache.vehicle then
+                DisableControlAction(0, 26, true)
+            end
             Wait(0)
-
-            lib.disableControls()
         end
-
-        lib.disableControls:Remove({ 36, 26 })
     end)
 end
+
+disableStanceControls()
 
 -- Add / Remove options
 removeUnsupportedEmotes()
@@ -1799,10 +1799,6 @@ if Config.StanceKey ~= '' then
         onPressed = function()
             if isActionsLimited or cache.vehicle then return end
 
-            DisableControlAction(0, 36, true)
-            DisableControlAction(0, 26, true)
-            disableStanceControls()
-
             local stanceLevel = LocalPlayer.state.stance
 
             if returnStance then
@@ -1966,6 +1962,15 @@ end)
 ---@diagnostic disable-next-line: param-type-mismatch
 AddStateBagChangeHandler('stance', nil, function(_, _, value)
     if value == 0 then -- Regular
+        if currentWalk == 'default' then
+            ResetPedMovementClipset(cache.ped, 1.0)
+        else
+            lib.requestAnimSet(currentWalk, 1000)
+            SetPedMovementClipset(cache.ped, currentWalk, 1.0)
+        end
+
+        ResetPedWeaponMovementClipset(cache.ped)
+        ResetPedStrafeClipset(cache.ped)
         ---@diagnostic disable-next-line: param-type-mismatch
         SetPedStealthMovement(cache.ped, false, 0)
     elseif value == 1 then -- Stealth
