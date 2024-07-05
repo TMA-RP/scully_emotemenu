@@ -801,7 +801,7 @@ end
 ---Cancel the animation you're currently playing
 ---@param skipReset boolean
 function cancelEmote(skipReset)
-    if isPlayingAnimation and not isActionsLimited then
+    if isPlayingAnimation then
         if IsPedUsingAnyScenario(cache.ped) then ClearPedTasksImmediately(cache.ped) end
         if LocalPlayer.state.ptfx then LocalPlayer.state:set('ptfx', false, true) end
         if Config.PtfxKeybind then keybinds.PlayPtfx:disable(true) end
