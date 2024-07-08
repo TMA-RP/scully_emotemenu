@@ -1768,7 +1768,7 @@ if Config.HandsUpKey ~= '' then
         defaultKey = Config.HandsUpKey,
         onPressed = function()
             if isActionsLimited then return end
-
+            cancelEmote(false)
             local onBike = false
 
             if cache.vehicle then
@@ -2140,7 +2140,7 @@ end)
 
 AddEventHandler('entityDamaged', function(entity)
     if cache.ped == entity then
-        if not IsPedFatallyInjured(cache.ped) then return end
+        -- if not IsPedFatallyInjured(cache.ped) then return end
 
         cancelEmote(false)
     end
