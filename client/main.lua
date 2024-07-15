@@ -1780,6 +1780,7 @@ if Config.HandsUpKey ~= '' then
             lib.requestAnimDict('random@mugging3', 1000)
             ---@diagnostic disable-next-line: param-type-mismatch
             TaskPlayAnim(cache.ped, 'random@mugging3', 'handsup_standing_base', 8.0, 8.0, -1, 50, 0, false, onBike and 4127 or false, false)
+            RemoveAnimDict('random@mugging3')
         end,
         onReleased = function()
             if isActionsLimited then return end
