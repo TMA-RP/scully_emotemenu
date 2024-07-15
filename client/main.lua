@@ -5,6 +5,7 @@ local emoteCooldown, lastEmote, lastVariant, ptfxCanHold, otherPlayer, clone = 0
 local playerParticles, keybinds, registeredEmotes, cloneProps = {}, {}, {}, {}
 local lang = require('locales.' .. Config.Language)
 local pedTypes = require('data.ped_types')
+local cloneThreadStarted = false
 
 -- Menu Options
 local mainMenuOptions, emoteMenuOptions, emoteMenuBindsOptions = {
@@ -57,6 +58,7 @@ end
 -- Functions
 ---Closes the animation menu
 function closeMenu()
+    cloneThreadStarted = false
     local currentMenu = lib.getOpenMenu()
     if currentMenu ~= 'animations_main_menu' and currentMenu ~= 'animations_emote_menu' then return end
 
@@ -628,8 +630,6 @@ function playEmote(data, variation)
 end
 
 exports('playEmote', playEmote)
-
-local cloneThreadStarted = false
 
 local function startCloneThread()
     if cloneThreadStarted then return end
